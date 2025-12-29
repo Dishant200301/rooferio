@@ -35,23 +35,22 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
+              <div
+                key={link.name}
+                className="relative group"
+                onMouseEnter={link.hasDropdown ? () => setIsServicesOpen(true) : undefined}
+                onMouseLeave={link.hasDropdown ? () => setIsServicesOpen(false) : undefined}
+              >
                 {link.hasDropdown ? (
                   <button
                     className="relative flex items-center gap-1 px-4 py-2 font-heading text-base font-bold uppercase overflow-hidden group"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
                   >
                     <span
                       className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-300 ease-in-out -z-10 ${location.pathname.startsWith("/services") ? "h-full" : "h-0 group-hover:h-full"
                         }`}
                     />
                     <span className="relative z-10 inline-flex flex-col whitespace-nowrap">
-                      <span className={`flex items-center gap-1 transition-transform duration-300 ease-in-out ${location.pathname.startsWith("/services") ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                        {link.name}
-                        <ChevronDown className="w-4 h-4" />
-                      </span>
-                      <span className={`absolute top-full left-0 w-full flex items-center gap-1 text-white transition-transform duration-300 ease-in-out ${location.pathname.startsWith("/services") ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                      <span className={`flex items-center gap-1 transition-colors duration-300 ease-in-out ${location.pathname.startsWith("/services") ? "text-white" : "group-hover:text-white"}`}>
                         {link.name}
                         <ChevronDown className="w-4 h-4" />
                       </span>
@@ -67,10 +66,7 @@ export function Navbar() {
                         }`}
                     />
                     <span className="relative z-10 inline-flex flex-col whitespace-nowrap">
-                      <span className={`block transition-transform duration-300 ease-in-out ${location.pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                        {link.name}
-                      </span>
-                      <span className={`absolute top-full left-0 w-full block text-white transition-transform duration-300 ease-in-out ${location.pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                      <span className={`block transition-colors duration-300 ease-in-out ${location.pathname === link.href ? "text-white" : "group-hover:text-white"}`}>
                         {link.name}
                       </span>
                     </span>
@@ -82,8 +78,6 @@ export function Navbar() {
                   <div
                     className={`absolute top-full left-0 pt-2 transition-all duration-200 ${isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
                       }`}
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
                   >
                     <div className="bg-background border border-border shadow-lg min-w-64 py-2">
                       {services.map((service) => {
@@ -99,11 +93,7 @@ export function Navbar() {
                                 }`}
                             />
                             <span className="relative z-10 inline-flex flex-col whitespace-nowrap w-full">
-                              <span className={`flex items-center gap-3 transition-transform duration-300 ease-in-out ${location.pathname === service.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                                <Icon className="w-5 h-5" />
-                                <span>{service.name}</span>
-                              </span>
-                              <span className={`absolute top-full left-0 w-full flex items-center gap-3 text-white transition-transform duration-300 ease-in-out ${location.pathname === service.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                              <span className={`flex items-center gap-3 transition-colors duration-300 ease-in-out ${location.pathname === service.href ? "text-white" : "text-black group-hover:text-white"}`}>
                                 <Icon className="w-5 h-5" />
                                 <span>{service.name}</span>
                               </span>
@@ -173,11 +163,7 @@ export function Navbar() {
                                   }`}
                               />
                               <span className="relative z-10 inline-flex flex-col whitespace-nowrap w-full">
-                                <span className={`flex items-center gap-3 transition-transform duration-300 ease-in-out ${location.pathname === service.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                                  <Icon className="w-5 h-5" />
-                                  <span>{service.name}</span>
-                                </span>
-                                <span className={`absolute top-full left-0 w-full flex items-center gap-3 text-white transition-transform duration-300 ease-in-out ${location.pathname === service.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                                <span className={`flex items-center gap-3 transition-colors duration-300 ease-in-out ${location.pathname === service.href ? "text-white" : "text-black group-hover:text-white"}`}>
                                   <Icon className="w-5 h-5" />
                                   <span>{service.name}</span>
                                 </span>
@@ -199,10 +185,7 @@ export function Navbar() {
                         }`}
                     />
                     <span className="relative z-10 inline-flex flex-col whitespace-nowrap">
-                      <span className={`block transition-transform duration-300 ease-in-out ${location.pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
-                        {link.name}
-                      </span>
-                      <span className={`absolute top-full left-0 w-full block text-white transition-transform duration-300 ease-in-out ${location.pathname === link.href ? "-translate-y-full" : "group-hover:-translate-y-full"}`}>
+                      <span className={`block transition-colors duration-300 ease-in-out ${location.pathname === link.href ? "text-white" : "group-hover:text-white"}`}>
                         {link.name}
                       </span>
                     </span>
