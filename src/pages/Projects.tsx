@@ -5,10 +5,16 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projectDetails } from "@/data/projectDetails";
+import { ProjectCard } from "@/components/ProjectCard";
+
+import { Helmet } from "react-helmet-async";
 
 const Projects = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+      </Helmet>
       <Navbar />
       <main>
         {/* Hero */}
@@ -27,38 +33,7 @@ const Projects = () => {
           <div className="container mx-auto px-5 md:px-12 xl:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projectDetails.map((project) => (
-                <Link
-                  key={project.slug}
-                  to={`/projects/${project.slug}`}
-                  className="bg-light group cursor-pointer"
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    {/* Content */}
-                    <div className="p-6 flex flex-col justify-between order-2 lg:order-1">
-                      <div>
-                        <span className="inline-block bg-accent text-accent-foreground px-3 py-1 font-heading text-sm font-bold uppercase mb-4">
-                          {project.category}
-                        </span>
-                        <h3 className="font-heading text-2xl font-semibold uppercase leading-tight mb-4">
-                          {project.title}
-                        </h3>
-                      </div>
-                      <div className="flex items-center gap-2 text-base uppercase font-bold text-accent-foreground opacity-70">
-                        <img src="/image/location.svg" className="w-4 h-4 text-black " />
-                        <span className="font-heading text-black font-bold">{project.location}</span>
-                      </div>
-                    </div>
-
-                    {/* Image */}
-                    <div className="h-64 lg:h-full overflow-hidden order-1 lg:order-2">
-                      <img
-                        src={project.heroImage}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  </div>
-                </Link>
+                <ProjectCard key={project.slug} project={project} />
               ))}
             </div>
           </div>

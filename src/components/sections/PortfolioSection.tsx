@@ -24,16 +24,17 @@ const portfolioImages: PortfolioItem[] = [
 const displayImages = [...portfolioImages, ...portfolioImages].slice(0, 20);
 
 export function PortfolioSection() {
-  const [rotation, setRotation] = useState(-311.4); // Initial rotation from reference
   const isDragging = useRef(false);
   const startX = useRef(0);
+  const currentRotation = useRef(-311.4); // Use ref for rotation to avoid re-renders
   const startRotation = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: MouseEvent) => {
     isDragging.current = true;
     startX.current = e.clientX;
-    startRotation.current = rotation;
+    startRotation.current = currentRotation.current;
     if (containerRef.current) {
       containerRef.current.style.cursor = "grabbing";
     }
@@ -44,7 +45,12 @@ export function PortfolioSection() {
     e.preventDefault();
     const delta = e.clientX - startX.current;
     // Adjust sensitivity as needed
-    setRotation(startRotation.current - delta * 0.2);
+    currentRotation.current = startRotation.current - delta * 0.2;
+
+    // Apply transform directly
+    if (carouselRef.current) {
+      carouselRef.current.style.transform = `translateZ(1100px) rotateY(${currentRotation.current}deg)`;
+    }
   };
 
   const handleMouseUp = () => {
@@ -61,12 +67,26 @@ export function PortfolioSection() {
     }
   };
 
-  // Radius calculation:
-  // Width of card = 300px (approx)
-  // Circumference = 12 * 300 = 3600
-  // Radius = 3600 / (2 * PI) ~= 570px
-  // We'll use a slightly larger radius for spacing
-  const radius = 650;
+  // Auto-rotation effect
+  useEffect(() => {
+    let animationFrameId: number;
+
+    const animate = () => {
+      if (!isDragging.current) {
+        currentRotation.current -= 0.05; // Adjust speed here
+        if (carouselRef.current) {
+          carouselRef.current.style.transform = `translateZ(1100px) rotateY(${currentRotation.current}deg)`;
+        }
+      }
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   return (
     <section className="bg-[#f5f5f5] py-20 overflow-hidden flex flex-col items-center border-b border-gray-100 min-h-[900px]">
@@ -112,15 +132,16 @@ export function PortfolioSection() {
         style={{ cursor: "grab" }}
       >
         <div
-          className="relative w-full h-full transform-style-3d transition-transform duration-100 ease-out"
+          ref={carouselRef}
+          className="relative w-full h-full transform-style-3d will-change-transform"
           style={{
-            transform: `translateZ(1100px) rotateY(${rotation}deg)`, // Stronger perspective
+            transform: `translateZ(1100px) rotateY(${currentRotation.current}deg)`, // Initial transform
           }}
         >
           {displayImages.map((item, index) => (
             <div
               key={index}
-              className="absolute top-1/2 left-1/2 w-[600px] h-[450px] bg-[#f5f5f5] overflow-hidden"
+              className="absolute top-1/2 left-1/2 w-[600px] h-[450px] bg-[#f5f5f5] overflow-hidden will-change-transform"
               style={{
                 // Concave setup for 7 images:
                 // Radius 2000px, Angle 18deg -> Flatter curve, fits more items

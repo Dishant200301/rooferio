@@ -4,9 +4,14 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { Link } from "react-router-dom";
 import { services } from "../data/services";
 
+import { Helmet } from "react-helmet-async";
+
 const Services = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+      </Helmet>
       <Navbar />
       <main>
         {/* Hero */}

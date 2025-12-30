@@ -6,6 +6,7 @@ import { Link as LinkIcon, ArrowRight } from "lucide-react";
 import { getBlogDetailBySlug, blogDetails } from "@/data/blogDetails";
 import { blogs } from "@/data/blogs";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { Helmet } from "react-helmet-async";
 
 const BlogDetail = () => {
     const { blogId } = useParams();
@@ -35,8 +36,13 @@ const BlogDetail = () => {
 
     const relatedBlogsData = blogs.filter(b => b.id !== blog.id).slice(0, 3);
 
+
+
     return (
         <div className="min-h-screen bg-white">
+            <Helmet>
+                <title>{blog.title}</title>
+            </Helmet>
             <Navbar />
 
             <main>

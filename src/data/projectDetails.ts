@@ -51,7 +51,7 @@ export const projectDetails: ProjectDetail[] = [
     materials: ["Asphalt Shingles", "Underlayment", "Flashing", "Sealant"],
     description:
       "A critical roof repair project addressing multiple leak points and restoring structural integrity to a residential property in McKinney. The homeowner experienced water damage during heavy storms, requiring immediate attention and expert restoration.",
-    heroImage: "/image/portfolio-1.jpg",
+    heroImage: "/image/project-before-1.png",
 
     whatWeDid: [
       {
@@ -75,8 +75,8 @@ export const projectDetails: ProjectDetail[] = [
     ],
 
     beforeAfter: {
-      before: "/image/portfolio-1.jpg",
-      after: "/image/portfolio-2.jpg",
+      before: "/image/project-before-1.png",
+      after: "/image/project-after-1.png",
     },
 
     challenges: [
@@ -104,9 +104,9 @@ export const projectDetails: ProjectDetail[] = [
     },
 
     gallery: [
-      "/image/portfolio-1.jpg",
-      "/image/portfolio-2.jpg",
-      "/image/portfolio-3.jpg",
+      "/image/project-1(1).png",
+      "/image/project-1(2).png",
+      "/image/project-1(3).png",
      
     ],
   },
@@ -129,7 +129,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     description:
       "A comprehensive commercial roof restoration project utilizing advanced coating technology to extend the lifespan of a flat roof system. This project transformed an aging commercial roof into a highly reflective, energy-efficient surface.",
-    heroImage: "/image/portfolio-2.jpg",
+    heroImage: "/image/project-before-2.png",
 
     whatWeDid: [
       {
@@ -153,8 +153,8 @@ export const projectDetails: ProjectDetail[] = [
     ],
 
     beforeAfter: {
-      before: "/image/portfolio-2.jpg",
-      after: "/image/portfolio-3.jpg",
+      before: "/image/project-before-2.png",
+      after: "/image/project-after-2.png",
     },
 
     challenges: [
@@ -182,9 +182,9 @@ export const projectDetails: ProjectDetail[] = [
     },
 
     gallery: [
-      "/image/portfolio-2.jpg",
-      "/image/portfolio-3.jpg",
-      "/image/portfolio-4.jpg",
+      "/image/project-2(1).png",
+      "/image/project-2(2).png",
+      "/image/project-2(3).png",
     
     ],
   },
@@ -207,7 +207,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     description:
       "A complete metal roof installation project focused on maximizing energy efficiency and longevity. The homeowner wanted a sustainable roofing solution that would last decades while reducing cooling costs in the hot Texas climate.",
-    heroImage: "/image/portfolio-3.jpg",
+    heroImage: "/image/project-before-3.png",
 
     whatWeDid: [
       {
@@ -232,8 +232,8 @@ export const projectDetails: ProjectDetail[] = [
     ],
 
     beforeAfter: {
-      before: "/image/portfolio-3.jpg",
-      after: "/image/portfolio-4.jpg",
+      before: "/image/project-before-3.png",
+      after: "/image/project-after-3.png",
     },
 
     challenges: [
@@ -261,9 +261,9 @@ export const projectDetails: ProjectDetail[] = [
     },
 
     gallery: [
-      "/image/portfolio-3.jpg",
-      "/image/portfolio-4.jpg",
-      "/image/portfolio-5.jpg",
+      "/image/project-3(1).png",
+      "/image/project-3(2).png",
+      "/image/project-3(3).png",
      
     ],
   },
@@ -286,7 +286,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
     description:
       "Emergency roof replacement following severe hail storm damage. The project required complete tear-off and replacement with upgraded materials to provide superior protection against future storms.",
-    heroImage: "/image/portfolio-4.jpg",
+    heroImage: "/image/project-before-4.png",
 
     whatWeDid: [
       {
@@ -312,8 +312,8 @@ export const projectDetails: ProjectDetail[] = [
     ],
 
     beforeAfter: {
-      before: "/image/portfolio-4.jpg",
-      after: "/image/portfolio-5.jpg",
+      before: "/image/project-before-4.png",
+      after: "/image/project-after-4.png",
     },
 
     challenges: [
@@ -341,9 +341,9 @@ export const projectDetails: ProjectDetail[] = [
     },
 
     gallery: [
-      "/image/portfolio-4.jpg",
-      "/image/portfolio-5.jpg",
-      "/image/portfolio-6.jpg",
+      "/image/project-4(1).png",
+      "/image/project-4(2).png",
+      "/image/project-4(3).png",
    
     ],
   },

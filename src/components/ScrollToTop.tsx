@@ -2,11 +2,25 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToTop() {
-    const { pathname } = useLocation();
+    
+  const { pathname } = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
+  useEffect(() => {
+    // Multiple approaches to ensure scroll to top works reliably
+    window.scrollTo(0, 0);
 
-    return null;
-}
+    // Also try document methods for better browser compatibility
+    if (document.documentElement) {
+      document.documentElement.scrollTop = 0;
+    }
+    if (document.body) {
+      document.body.scrollTop = 0;
+    }
+
+    // Force layout recalculation
+    document.body.offsetHeight;
+  }, [pathname]);
+
+  return null;
+};
+

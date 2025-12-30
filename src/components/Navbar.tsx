@@ -76,28 +76,29 @@ export function Navbar() {
                 {/* Dropdown */}
                 {link.hasDropdown && (
                   <div
-                    className={`absolute top-full left-0 pt-2 transition-all duration-200 ${isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                    className={`absolute top-full  left-0 pt-2 transition-all duration-200 ${isServicesOpen ? "opacity-100 visible" : "opacity-0 invisible"
                       }`}
                   >
-                    <div className="bg-background border border-border shadow-lg min-w-64 py-2">
+                    <div className="bg-[#f5f5f5] border border-border shadow-lg min-w-[280px] p-2 space-y-1">
                       {services.map((service) => {
                         const Icon = service.icon;
                         return (
                           <Link
                             key={service.name}
                             to={service.href}
-                            className="relative flex items-center gap-3 px-4 py-3 font-heading text-sm font-bold uppercase overflow-hidden group"
+                            className="relative z-10 flex items-center justify-between px-4 py-3 font-heading text-sm font-bold uppercase overflow-hidden group bg-white hover:bg-white transition-colors"
                           >
-                            <span
-                              className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-300 ease-in-out -z-10 ${location.pathname === service.href ? "h-full" : "h-0 group-hover:h-full"
-                                }`}
-                            />
-                            <span className="relative z-10 inline-flex flex-col whitespace-nowrap w-full">
-                              <span className={`flex items-center gap-3 transition-colors duration-300 ease-in-out ${location.pathname === service.href ? "text-white" : "text-black group-hover:text-white"}`}>
-                                <Icon className="w-5 h-5" />
-                                <span>{service.name}</span>
-                              </span>
+                            <span className="relative z-10 inline-flex items-center gap-3">
+                              <Icon className="w-5 h-5 text-black" />
+                              <span className="text-black">{service.name}</span>
                             </span>
+
+                            {/* Hover Arrow */}
+                            <img
+                              src="/image/arrow-right.svg"
+                              alt=""
+                              className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                            />
                           </Link>
                         );
                       })}
@@ -139,11 +140,11 @@ export function Navbar() {
                   <>
                     <button
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className="flex items-center justify-between w-full py-3 font-heading text-base font-bold uppercase"
+                      className="flex items-center justify-between w-full py-3 pl-4 pr-2 font-heading text-base font-bold uppercase"
                     >
                       {link.name}
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""
+                        className={`w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""
                           }`}
                       />
                     </button>

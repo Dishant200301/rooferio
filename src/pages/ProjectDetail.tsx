@@ -3,7 +3,9 @@ import { Footer } from "@/components/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getProjectBySlug, getRelatedProjects } from "@/data/projectDetails";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, ChevronRight, MapPin } from "lucide-react";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Helmet } from "react-helmet-async";
 
 const ProjectDetail = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -17,6 +19,9 @@ const ProjectDetail = () => {
 
     return (
         <div className="min-h-screen bg-white">
+            <Helmet>
+                <title>{project.title}</title>
+            </Helmet>
             <Navbar />
             <main>
                 {/* Hero Section - Dark Background */}
@@ -248,13 +253,13 @@ const ProjectDetail = () => {
                         <div className="text-center mb-16">
                             <div className="flex justify-center items-center gap-2 mb-6">
                                 <span className="w-3 h-3 bg-orange-500" />
-                                <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-orange-500">
+                                <span className="text-[16px] font-bold uppercase font-heading tracking-[0.25em] text-white">
                                     Other Projects
                                 </span>
                                 <span className="w-3 h-3 bg-orange-500" />
                             </div>
 
-                            <h2 className="font-heading text-[42px] md:text-[56px] font-extrabold uppercase leading-[1.1]">
+                            <h2 className="font-heading text-[42px] md:text-[60px] font-extrabold uppercase leading-[1.1]">
                                 Other Projects You <br />
                                 May Feel Inspiring
                             </h2>
@@ -263,38 +268,7 @@ const ProjectDetail = () => {
                         {/* Project Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                             {relatedProjects.map((project) => (
-                                <Link
-                                    key={project.slug}
-                                    to={`/projects/${project.slug}`}
-                                    className="group bg-white text-black grid grid-cols-[1fr_1fr] overflow-hidden hover:shadow-2xl transition-shadow"
-                                >
-                                    {/* Left Content */}
-                                    <div className="p-10 flex flex-col justify-between">
-                                        <div>
-                                            <span className="inline-block bg-orange-500 text-white text-[10px] font-bold uppercase px-3 py-1 mb-5">
-                                                {project.category}
-                                            </span>
-
-                                            <h3 className="font-heading text-[24px] font-extrabold uppercase leading-tight group-hover:text-orange-500 transition-colors">
-                                                {project.title}
-                                            </h3>
-                                        </div>
-
-                                        <div className="flex items-center gap-2 text-[11px] font-bold uppercase text-gray-500">
-                                            <MapPin size={13} className="text-orange-500" />
-                                            {project.location}
-                                        </div>
-                                    </div>
-
-                                    {/* Right Image */}
-                                    <div className="overflow-hidden">
-                                        <img
-                                            src={project.heroImage}
-                                            alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                    </div>
-                                </Link>
+                                <ProjectCard key={project.slug} project={project} />
                             ))}
                         </div>
 
@@ -302,10 +276,10 @@ const ProjectDetail = () => {
                         <div className="flex justify-center">
                             <Link
                                 to="/projects"
-                                className="bg-orange-500 text-black px-12 py-4 text-[11px] font-bold uppercase tracking-widest flex items-center gap-3 hover:bg-orange-600 transition-colors"
+                                className="bg-orange-500 text-black px-6 py-3 text-[16px] font-heading font-bold uppercase tracking-widest flex items-center gap-3 hover:bg-orange-600 transition-colors"
                             >
                                 View All Projects
-                                <ArrowRight size={16} />
+                                <ChevronRight size={26} />
                             </Link>
                         </div>
 

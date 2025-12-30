@@ -4,8 +4,10 @@ import { Footer } from "@/components/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { getServiceBySlug, serviceDetails } from "../data/serviceDetails";
+import { services } from "../data/services";
 import { useState } from "react";
 import { ArrowRight, ChevronDown, ChevronUp, Phone, Calendar, MessageSquare, Award, ShieldCheck, Trophy, ChevronRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -16,8 +18,13 @@ const ServiceDetail = () => {
     return <Navigate to="/services" replace />;
   }
 
+
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{service.title}</title>
+      </Helmet>
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -102,9 +109,9 @@ const ServiceDetail = () => {
                     className="w-full h-full object-cover"
                   />
 
-                  
 
-                  
+
+
                 </div>
               </div>
             </div>
@@ -247,13 +254,13 @@ const ServiceDetail = () => {
                       {service.sectionDescriptions.faqs}
                     </p>
                   )}
-                  <div className="space-y-8">
+                  <div className="space-y-8 border-l-2 border-orange-500 pl-6 py-2">
                     {service.sections.faqs.map((faq, index) => (
-                      <div key={index} className="border-l-2 border-orange-500 pl-6">
-                        <h3 className="font-heading text-[18px] font-semibold text-[#1a1a1a] mb-2">
+                      <div key={index}>
+                        <h3 className="font-heading text-[18px] font-bold text-[#1a1a1a] mb-2">
                           {faq.question}
                         </h3>
-                        <p className="font-body text-[18px] text-gray-500 italic leading-relaxed">
+                        <p className="font-body text-[18px] text-gray-600 italic leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -267,18 +274,34 @@ const ServiceDetail = () => {
                     Explore Other Services
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {service.relatedServices.map((related) => (
-                      <Link
-                        key={related.slug}
-                        to={`/services/${related.slug}`}
-                        className="flex items-center gap-4 bg-[#1a1a1a] hover:bg-[#2a2a2a] p-4 transition-all group border border-white/10"
-                      >
-                        <span className="w-2 h-2 bg-orange-500 group-hover:scale-125 transition-transform" />
-                        <span className="font-heading text-sm font-bold uppercase text-white tracking-wide">
-                          {related.title}
-                        </span>
-                      </Link>
-                    ))}
+                    {services.map((related) => {
+                      const Icon = related.icon || ChevronRight;
+
+                      return (
+                        <Link
+                          key={related.href}
+                          to={related.href}
+                          className="relative flex items-center bg-[#1a1a1a] hover:bg-[#2a2a2a] p-3 transition-all group border border-white/10 overflow-hidden"
+                        >
+                          {/* Hover Arrow (Custom SVG) */}
+                          <div className="absolute left-3 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-6 h-6 fill-orange-500">
+                              <path d="M181.66,133.66l-80,80A8,8,0,0,1,88,208V48a8,8,0,0,1,13.66-5.66l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                            </svg>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-8">
+                            <span className="text-orange-500">
+                              <Icon className="w-6 h-6" />
+                            </span>
+                            <span className="font-heading text-[22px] font-bold uppercase text-white leading-[29px] tracking-wide">
+                              {related.title}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

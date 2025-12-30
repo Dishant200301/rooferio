@@ -10,6 +10,7 @@ import team2 from "/image/blog-3.jpg";
 import team3 from "/image/blog-1.jpg";
 import { ContactSection } from "@/components/sections/ContactSection";
 import AwardsSection from "@/components/sections/AwardsSection";
+import { Helmet } from "react-helmet-async";
 
 const timeline = [
   {
@@ -189,8 +190,13 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+      </Helmet>
       <Navbar />
       <main>
         {/* Hero Section */}

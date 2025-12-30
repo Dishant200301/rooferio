@@ -1,13 +1,14 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { useState } from "react";
+import { useState, cloneElement, isValidElement } from "react";
 import { Link } from "react-router-dom";
 import { blogs } from "@/data/blogs";
-
+import { Star } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 const categories = [
   { id: "all", label: "All", iconSrc: "/image/filter-all.svg" },
-  { id: "featured", label: "Featured", iconSrc: "/image/filter-featured.svg" },
+  { id: "featured", label: "Featured", iconSrc: <Star /> },
   { id: "tips", label: "Tips", iconSrc: "/image/filter-tips.svg" },
   { id: "guides", label: "Guides", iconSrc: "/image/filter-guides.svg" },
   { id: "news", label: "News", iconSrc: "/image/filter-news.svg" },
@@ -22,8 +23,13 @@ const Blogs = () => {
     return blog.category.toLowerCase() === activeCategory;
   });
 
+
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+      </Helmet>
       <Navbar />
       <main>
         {/* Blog Section */}
@@ -48,19 +54,25 @@ const Blogs = () => {
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className={`flex items-center font-heading  gap-2 px-4 py-2 text-[16px] font-bold uppercase transition-colors ${isActive
-                      ? "bg-foreground text-background"
-                      : "bg-foreground/5 text-foreground hover:bg-foreground/10"
+                    className={`flex items-center font-heading gap-2 px-4 py-2 text-[16px] font-bold uppercase transition-colors ${isActive
+                      ? "bg-black text-white"
+                      : "bg-[#f5f5f5] text-black hover:bg-gray-200"
                       }`}
                   >
-                    <img
-                      src={cat.iconSrc}
-                      alt=""
-                      className="w-4 h-4 object-contain"
-                      style={isActive ? {
-                        filter: 'brightness(0) saturate(100%) invert(64%) sepia(89%) saturate(1945%) hue-rotate(360deg) brightness(102%) contrast(101%)'
-                      } : {}}
-                    />
+                    {typeof cat.iconSrc === "string" ? (
+                      <img
+                        src={cat.iconSrc}
+                        alt=""
+                        className="w-4 h-4 object-contain"
+                        style={isActive ? {
+                          filter: 'invert(53%) sepia(99%) saturate(1519%) hue-rotate(360deg) brightness(103%) contrast(106%)'
+                        } : {}}
+                      />
+                    ) : (
+                      isValidElement(cat.iconSrc) && cloneElement(cat.iconSrc as React.ReactElement, {
+                        className: `w-4 h-4 ${isActive ? "text-accent" : ""}`
+                      })
+                    )}
                     {cat.label}
                   </button>
                 );

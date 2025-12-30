@@ -13,9 +13,14 @@ import { BlogsSection } from "@/components/sections/BlogsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
+import { Helmet } from "react-helmet-async";
+
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+      </Helmet>
       <Navbar />
       <main>
         <HeroSection />

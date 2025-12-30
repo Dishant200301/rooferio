@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const socialMedia = [
@@ -12,8 +13,13 @@ const Contact = () => {
     { name: "PINTEREST", src: "/image/pinterest.svg" },
   ];
 
+
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+      </Helmet>
       <Navbar />
       <main>
         {/* Contact Section */}
