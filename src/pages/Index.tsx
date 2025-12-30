@@ -19,12 +19,12 @@ import { Helmet } from "react-helmet-async";
 const Index = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen">
+      <div className="min-h-screen ">
         <Helmet>
           <title>Rooferio - Roofer and Roofing Service Framer Template</title>
         </Helmet>
         <Navbar />
-        <main>
+        <main className="overflow-hidden">
           <HeroSection />
           <ServicesSection />
           <PortfolioSection />

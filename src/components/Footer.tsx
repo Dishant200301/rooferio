@@ -45,49 +45,49 @@ export function Footer() {
         <img src="/image/footer-image.png" alt="Footer Top" className="w-full h-auto block invert bg-light" />
       </div>
 
-      <div className="bg-black text-white px-6 ld:px-0 pt-12 container mx-auto max-w-[1480px]">
+      <div className="bg-black text-white px-6 lg:px-0 pt-12 container mx-auto max-w-[1480px]">
         {/* --- TOP SECTION (Links & Newsletter) --- */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 border-t border-b ${borderColor}`}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {/* Pages */}
-          <div className={`p-8 lg:p-10 border-l ${borderColor}`}>
-            <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Pages</h3>
-            <ul className="space-y-0">
-              {pageLinks.map((link) => (
-                <li key={link}>
-                  <Link to="#" className="text-[18px] font-semibold font-inter text-gray-300 hover:text-white transition-colors">{link}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Pages */}
+            <div className={`p-8 lg:p-10 border-l ${borderColor}`}>
+              <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Pages</h3>
+              <ul className="space-y-0">
+                {pageLinks.map((link) => (
+                  <li key={link}>
+                    <Link to="#" className="text-[18px] font-semibold font-inter text-gray-300 hover:text-white transition-colors">{link}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div className={`p-8 lg:p-10`}>
-            <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Services</h3>
-            <ul className="space-y-0">
-              {serviceLinks.map((link) => (
-                <li key={link}>
-                  <Link to="#" className="text-[18px] font-semibold text-gray-300 hover:text-white transition-colors">{link}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Services */}
+            <div className={`p-8 lg:p-10`}>
+              <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Services</h3>
+              <ul className="space-y-0">
+                {serviceLinks.map((link) => (
+                  <li key={link}>
+                    <Link to="#" className="text-[18px] font-semibold text-gray-300 hover:text-white transition-colors">{link}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Roofing Types */}
-          <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
-            <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Roofing Types</h3>
-            <ul className="space-y-0">
-              {roofingTypes.map((type) => (
-                <li key={type} className="text-[18px] font-semibold text-gray-300">
-                  {type}
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Roofing Types */}
+            <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
+              <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Roofing Types</h3>
+              <ul className="space-y-0">
+                {roofingTypes.map((type) => (
+                  <li key={type} className="text-[18px] font-semibold text-gray-300">
+                    {type}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Newsletter & Socials */}
-          <div className="p-8 lg:p-10 border-r ${borderColor}">
+          <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
             <h3 className="text-white text-lg font-bold uppercase mb-6 tracking-wider">Subscribe to the newsletter</h3>
             <div className="flex mb-[120px]">
               <input

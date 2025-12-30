@@ -13,7 +13,7 @@ const blogs = [
   },
   {
     image: "/image/blog-2.jpg",
-    category: "Guides", 
+    category: "Guides",
     date: "July 5, 2025",
     author: "Bramwell Cutter",
     authorImage: "/image/bramwell-cutter.png",
@@ -50,11 +50,11 @@ export function BlogsSection() {
             </h2>
           </div>
 
-          
+
         </div>
 
         {/* Blog List */}
-        <div className=" ml-[28%]">
+        <div className=" ml-0 md:ml-[28%]">
           {blogs.map((blog) => (
             <Link
               key={blog.title}
@@ -100,7 +100,7 @@ export function BlogsSection() {
           ))}
         </div>
 
-        
+
       </div>
     </section>
   );

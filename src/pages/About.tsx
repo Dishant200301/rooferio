@@ -821,7 +821,7 @@ const About = () => {
                 </div>
 
                 {/* Bottom CTA with spacing so the last card clears */}
-                <div className="mt-32 bg-black text-white py-12 px-6 xl:px-0 text-center relative z-50">
+                <div className="mt-32 bg-black text-white py-12 px-6 xl:px-0 text-center relative">
                   <p className="font-body text-lg md:text-xl font-semibold leading-relaxed max-w-xl mx-auto">
                     If you don't see an open position that fits, we'd still love to hear from you!
                     <a href="#" className="text-orange-500 underline ml-2">Drop us a note</a> about how we could collaborate—we're always excited to connect with talented people and grow together.

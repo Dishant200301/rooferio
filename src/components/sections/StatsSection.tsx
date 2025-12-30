@@ -126,12 +126,12 @@ export function StatsSection() {
             <div key={stat.title} className="text-white text-center flex flex-col items-center">
               {/* Value & Suffix */}
               <div className="flex items-start justify-center leading-none mb-4">
-                <span className="font-heading text-[80px] md:text-[100px] font-semibold tracking-tighter text-white">
+                <span className="font-heading text-[50px] md:text-[80px] lg:text-[100px] font-semibold tracking-tighter text-white">
                   {stat.decimals > 0
                     ? counts[index].toFixed(stat.decimals)
                     : Math.floor(counts[index]).toLocaleString()}
                 </span>
-                <span className="font-heading text-[40px] md:text-[50px] font-semibold text-orange-500 mt-2 md:mt-3">
+                <span className="font-heading text-[30px] md:text-[40px] lg:text-[50px] font-semibold text-orange-500 mt-2 md:mt-3">
                   {stat.suffix}
                 </span>
               </div>

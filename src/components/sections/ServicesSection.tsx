@@ -63,13 +63,13 @@ function ServiceCard({ service }: ServiceCardProps) {
     <Link
       ref={cardRef}
       to={service.href}
-      className="service-card group relative flex bg-[#f5f5f5] overflow-hidden cursor-none"
+      className="service-card group relative flex flex-col md:flex-row bg-[#f5f5f5] overflow-hidden cursor-none"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       {/* Text Content */}
-      <div className="flex-1 py-8 pl-4 flex flex-col justify-between relative z-10">
+      <div className="flex-1 p-6 md:py-8 md:pl-4 flex flex-col justify-between relative z-10">
         <h3 className="font-heading text-[22px] font-black uppercase tracking-tight text-black">
           {service.title}
         </h3>
@@ -95,11 +95,11 @@ function ServiceCard({ service }: ServiceCardProps) {
       </div>
 
       {/* Image */}
-      <div className="w-[240px] h-full shrink-0">
+      <div className="w-full h-[200px] md:w-[240px] md:h-full shrink-0">
         <img
           src={service.image}
           alt={service.title}
-          className="w-full h-full object-cover py-4 pr-4"
+          className="w-full h-full object-cover md:py-4 md:pr-4"
         />
       </div>
     </Link>
@@ -109,14 +109,14 @@ function ServiceCard({ service }: ServiceCardProps) {
 export function ServicesSection() {
   return (
     <section className="bg-white py-16 md:pb-24 md:pt-0">
-       {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="section-label mb-4">Our Services</div>
-          <h2 className="section-heading">
-            We Climb So You<br />
-            Don't Have To
-          </h2>
-        </div>
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <div className="section-label mb-4">Our Services</div>
+        <h2 className="section-heading">
+          We Climb So You<br />
+          Don't Have To
+        </h2>
+      </div>
       <style>{`
         @keyframes arrow-slide {
           0%, 100% { transform: translateX(0); }

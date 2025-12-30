@@ -9,7 +9,7 @@ const badges = [
 
 export function HeroSection() {
   return (
-    <section className="bg-dark text-dark-foreground pb-24 lg:bg-[linear-gradient(to_bottom,hsl(var(--dark))_80%,#ffffff_20%)]">
+    <section className="bg-dark text-dark-foreground pb-12 md:pb-24 lg:bg-[linear-gradient(to_bottom,hsl(var(--dark))_80%,#ffffff_20%)]">
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px] py-8 md:py-12">
         {/* Badges Row */}
         <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
@@ -57,7 +57,7 @@ export function HeroSection() {
           </div>
 
           <p
-            className="font-body font-semibold text-lg text-right max-w-md opacity-90 text-white"
+            className="font-body font-semibold text-lg text-left md:text-right max-w-md opacity-90 text-white"
             style={{ lineHeight: "25px", letterSpacing: "-0.36px" }}
           >
             We've got hammers swinging and shingles<br className="hidden md:block" />

@@ -89,7 +89,7 @@ export function PortfolioSection() {
   }, []);
 
   return (
-    <section className="bg-[#f5f5f5] py-20 overflow-hidden flex flex-col items-center border-b border-gray-100 min-h-[900px]">
+    <section className="bg-[#f5f5f5] py-20 overflow-hidden flex flex-col items-center border-b border-gray-100 min-h-[600px] md:min-h-[900px]">
       {/* Header Section */}
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px] text-center mb-20 relative z-10">
         {/* Eyebrow Label */}
@@ -102,7 +102,7 @@ export function PortfolioSection() {
         </div>
 
         {/* Main Heading */}
-        <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-[900] text-black tracking-tight uppercase leading-[1.05] mb-10">
+        <h2 className="text-4xl md:text-[56px] lg:text-[64px] font-[900] text-black tracking-tight uppercase leading-[1.05] mb-10">
           A LOOK AT WHAT
           <br />
           WE'VE NAILED
@@ -123,7 +123,7 @@ export function PortfolioSection() {
 
       {/* 3D Carousel */}
       <div
-        className="w-full h-[300px] relative flex items-center justify-center perspective-container overflow-hidden"
+        className="w-full h-[300px] relative flex items-center justify-center perspective-container overflow-hidden scale-[0.5] md:scale-100"
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
