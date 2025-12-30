@@ -33,20 +33,20 @@ export function ContactSection() {
   return (
     <section className="bg-light py-16 md:py-24">
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1190px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div>
-            <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] mb-8">
+          <div className="text-center lg:text-left">
+            <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] mb-6 md:mb-8">
               YOU CLICK. WE<br />
               CLIMB. DEAL?
             </h2>
-            <p className="font-body text-lg max-w-[600px] font-semibold md:text-2xl  text-foreground leading-[31px]">
+            <p className="font-body text-lg max-w-[600px] font-semibold md:text-2xl  text-foreground leading-[31px] mx-auto lg:mx-0">
               Tell us what you need — we'll handle the rest (no ladders required on your part).
             </p>
           </div>
 
           {/* Right Form */}
-          <div className="bg-white p-8 md:p-10">
+          <div className="bg-white p-6 md:p-10">
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Name - Full Width */}
               <div>

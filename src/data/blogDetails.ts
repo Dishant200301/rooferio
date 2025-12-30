@@ -531,8 +531,8 @@ export const blogDetails: BlogDetail[] = [
   },
   {
     id: "6",
-    slug: "rooferio-best-roofing-company-2025",
-    title: "WE WON! ROOFERIO NAMED BEST ROOFING COMPANY OF 2025 🏆",
+    slug: "roofaria-best-roofing-company-2025",
+    title: "WE WON! ROOFARIA NAMED BEST ROOFING COMPANY OF 2025 🏆",
     category: "NEWS",
     date: "MAY 14, 2025",
     author: "BRAMWELL CUTTER",
@@ -540,7 +540,7 @@ export const blogDetails: BlogDetail[] = [
     authorBio: "Bram is the heart and hammer behind the company. With over two decades of hands-on roofing experience, he's seen it all—from tiny old barns to sleek modern homes with solar panels.",
     featuredImage: "/image/blog-10.jpg",
     introContent: [
-      "We're thrilled to announce that Rooferio has been named the Best Roofing Company of 2025!",
+      "We're thrilled to announce that Roofaria has been named the Best Roofing Company of 2025!",
       "This award belongs to our amazing team and, most importantly, to you—our incredible customers.",
       "Here's what this recognition means and how we plan to keep raising the bar."
     ],
@@ -579,7 +579,7 @@ export const blogDetails: BlogDetail[] = [
         ]
       },
       {
-        heading: "WHAT'S NEXT FOR ROOFERIO",
+        heading: "WHAT'S NEXT FOR ROOFARIA",
         content: [
           "We're expanding our services, investing in new technology, and training our team to deliver even better results.",
           "We can't wait to serve you and continue earning your trust for years to come."

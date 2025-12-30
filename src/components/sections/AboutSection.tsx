@@ -29,8 +29,8 @@ export function AboutSection() {
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left Content */}
-          <div className="pt-4">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="pt-4 text-center lg:text-left">
+            <div className="flex items-center gap-3 mb-6 justify-center lg:justify-start">
               <span className="w-3 h-3 bg-orange-500" />
               <span className="text-[16px] font-bold uppercase tracking-[0.15em] text-[#1a1a1a] font-heading">
                 About Us
@@ -38,12 +38,12 @@ export function AboutSection() {
               <span className="w-3 h-3 bg-orange-500" />
             </div>
 
-            <h2 className="font-heading text-[56px] md:text-[72px] font-black uppercase leading-[0.9] text-[#1a1a1a] mb-8 tracking-tight">
+            <h2 className="font-heading text-4xl md:text-[72px] font-black uppercase leading-[0.9] text-[#1a1a1a] mb-8 tracking-tight">
               Serving Roofs<br />
               Since 1982
             </h2>
             <p
-              className="font-body text-xl md:text-2xl font-semibold mb-8 max-w-lg"
+              className="font-body text-lg md:text-2xl font-semibold mb-8 max-w-lg mx-auto lg:mx-0"
               style={{ lineHeight: "31px", letterSpacing: "-0.24px" }}
             >
               We're a friendly, family-run roofing company that's been keeping
@@ -53,28 +53,30 @@ export function AboutSection() {
               last — that's how we roll.
             </p>
 
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 bg-black text-white font-heading text-[15px] font-bold uppercase px-8 h-14 tracking-wider hover:bg-black/90 transition-colors"
-            >
-              Know More About Us
-              <ChevronRight className="w-6 h-6" />
-            </Link>
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 bg-black text-white font-heading text-[15px] font-bold uppercase px-8 h-14 tracking-wider hover:bg-black/90 transition-colors"
+              >
+                Know More About Us
+                <ChevronRight className="w-6 h-6" />
+              </Link>
+            </div>
           </div>
 
           {/* Right Benefits */}
-          <div className="bg-white p-8 md:p-12">
+          <div className="bg-white p-6 md:p-12">
             <div className="flex flex-col">
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                className={`flex items-start gap-4 py-4 ${index !== benefits.length - 1 ? "border-b border-border" : ""
+                  className={`flex items-start gap-4 py-4 ${index !== benefits.length - 1 ? "border-b border-border" : ""
                     }`}
                 >
-                  <div className="w-[80px] h-[80px] bg-[#e6e6e6] flex items-center justify-center shrink-0">
+                  <div className="w-16 h-16 md:w-[80px] md:h-[80px] bg-[#e6e6e6] flex items-center justify-center shrink-0">
                     <img src={benefit.icon} alt="" className="w-6 h-6" />
                   </div>
-                  <p className="font-body text-[18px] font-bold text-[#1a1a1a] leading-snug max-w-xs">
+                  <p className="font-body text-base md:text-[18px] font-bold text-[#1a1a1a] leading-snug max-w-xs">
                     {benefit.text}
                   </p>
                 </div>

@@ -12,7 +12,7 @@ export function HeroSection() {
     <section className="bg-dark text-dark-foreground pb-12 md:pb-24 lg:bg-[linear-gradient(to_bottom,hsl(var(--dark))_80%,#ffffff_20%)]">
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px] py-8 md:py-12">
         {/* Badges Row */}
-        <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
+        <div className="flex flex-wrap justify-center lg:justify-between items-center gap-4 mb-6">
           {badges.map((badge, index) => (
             <div
               key={index}
@@ -30,8 +30,7 @@ export function HeroSection() {
 
         {/* Main Heading */}
         <h1
-          className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px] font-semibold uppercase leading-none mb-8 md:mb-12"
-          style={{ letterSpacing: "-4.4px" }}
+          className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px] font-semibold uppercase leading-none mb-8 md:mb-12 tracking-tight md:tracking-[-4.4px] text-center lg:text-left"
         >
           The Roofers Your<br />
           Neighbors Secretly<br />
@@ -40,10 +39,10 @@ export function HeroSection() {
         <div className="w-full h-px bg-dark-foreground/20 mb-0 md:mb-4" />
 
         {/* Button Row */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 md:mb-12">
-          <div className="flex flex-wrap gap-3">
-            <Link to="#" className="btn-cta-accent">
-              BUY TEMPLATE
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8 md:mb-12">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-4">
+            <Link to="/about" className="btn-cta-accent">
+              LEARN MORE
               <ChevronRight className="w-6 h-6" />
             </Link>
             <a
@@ -57,7 +56,7 @@ export function HeroSection() {
           </div>
 
           <p
-            className="font-body font-semibold text-lg text-left md:text-right max-w-md opacity-90 text-white"
+            className="font-body font-semibold text-lg text-center lg:text-right max-w-md opacity-90 text-white"
             style={{ lineHeight: "25px", letterSpacing: "-0.36px" }}
           >
             We've got hammers swinging and shingles<br className="hidden md:block" />

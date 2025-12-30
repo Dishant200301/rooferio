@@ -98,7 +98,7 @@ export const projectDetails: ProjectDetail[] = [
 
     testimonial: {
       quote:
-        "I was worried I'd need a full roof replacement, but Rooferio found and fixed every leak without breaking the bank. Their team was professional, fast, and the roof looks brand new. No more buckets in the attic!",
+        "I was worried I'd need a full roof replacement, but Roofaria found and fixed every leak without breaking the bank. Their team was professional, fast, and the roof looks brand new. No more buckets in the attic!",
       name: "Sarah Mitchell",
       role: "Homeowner, McKinney, TX",
     },
@@ -176,7 +176,7 @@ export const projectDetails: ProjectDetail[] = [
 
     testimonial: {
       quote:
-        "Rooferio saved us from a costly roof replacement. The coating system they installed has performed flawlessly, and our energy bills have dropped noticeably. Professional work from start to finish.",
+        "Roofaria saved us from a costly roof replacement. The coating system they installed has performed flawlessly, and our energy bills have dropped noticeably. Professional work from start to finish.",
       name: "Michael Chen",
       role: "Property Manager, Garland, TX",
     },
@@ -255,7 +255,7 @@ export const projectDetails: ProjectDetail[] = [
 
     testimonial: {
       quote:
-        "We love our new metal roof! It looks amazing and our AC doesn't run nearly as much. Rooferio's crew was meticulous with every detail. Best investment we've made in our home.",
+        "We love our new metal roof! It looks amazing and our AC doesn't run nearly as much. Roofaria's crew was meticulous with every detail. Best investment we've made in our home.",
       name: "Jennifer & Tom Rodriguez",
       role: "Homeowners, Round Rock, TX",
     },
@@ -335,7 +335,7 @@ export const projectDetails: ProjectDetail[] = [
 
     testimonial: {
       quote:
-        "After the storm, I was overwhelmed. Rooferio handled everything — the insurance, the repairs, everything. They were fast, professional, and the new roof looks incredible. I sleep better knowing it can handle whatever Texas weather throws at it.",
+        "After the storm, I was overwhelmed. Roofaria handled everything — the insurance, the repairs, everything. They were fast, professional, and the new roof looks incredible. I sleep better knowing it can handle whatever Texas weather throws at it.",
       name: "David Patterson",
       role: "Homeowner, Plano, TX",
     },

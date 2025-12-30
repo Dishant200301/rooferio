@@ -21,7 +21,8 @@ const Index = () => {
     <PageTransition>
       <div className="min-h-screen ">
         <Helmet>
-          <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+          <title>Roofaria | Premier Roofing Services & Installation in Texas</title>
+          <meta name="description" content="Roofaria provides top-tier roofing installation, repair, and replacement services in Texas. Trusted by thousands of homeowners for quality craftsmanship and reliability." />
         </Helmet>
         <Navbar />
         <main className="overflow-hidden">

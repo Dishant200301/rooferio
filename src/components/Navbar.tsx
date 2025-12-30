@@ -29,7 +29,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/image/logo.png" alt="Rooferio" className="h-10 md:h-12 w-auto" />
+            <img src="/image/favicon-light.png" alt="Roofaria" className="h-10 md:h-12 w-auto" />
+            <h1 className="text-3xl ml-2 font-bold font-heading uppercase">Roofaria</h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -154,75 +155,39 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
-            {navLinks.map((link) => (
-              <div key={link.name}>
-                {link.hasDropdown ? (
-                  <>
-                    <button
-                      onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className="flex items-center justify-between w-full py-3 pl-4 pr-2 font-heading text-base font-bold uppercase"
-                    >
-                      {link.name}
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""
-                          }`}
-                      />
-                    </button>
-                    {isServicesOpen && (
-                      <div className="pl-4 pb-2">
-                        {services.map((service) => {
-                          const Icon = service.icon;
-                          return (
-                            <Link
-                              key={service.name}
-                              to={service.href}
-                              className="relative flex items-center gap-3 px-4 py-2 font-heading text-sm font-bold uppercase overflow-hidden group"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              <span
-                                className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-300 ease-in-out -z-10 ${location.pathname === service.href ? "h-full" : "h-0 group-hover:h-full"
-                                  }`}
-                              />
-                              <span className="relative z-10 inline-flex flex-col whitespace-nowrap w-full">
-                                <span className={`flex items-center gap-3 transition-colors duration-300 ease-in-out ${location.pathname === service.href ? "text-white" : "text-black group-hover:text-white"}`}>
-                                  <Icon className="w-5 h-5" />
-                                  <span>{service.name}</span>
-                                </span>
-                              </span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </>
-                ) : (
+          <div className="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-white z-50 lg:hidden overflow-y-auto flex flex-col items-center py-12 animate-fade-in">
+            <div className="flex flex-col items-center w-full max-w-[200px] gap-3">
+              {navLinks.map((link) => (
+                <div key={link.name} className="w-full">
                   <Link
                     to={link.href}
-                    className="relative block px-4 py-3 font-heading text-base font-bold uppercase overflow-hidden group"
+                    className="block w-full py-3 px-6 text-center bg-[#F5F5F5] hover:bg-black hover:text-white transition-colors font-heading text-lg font-bold uppercase text-black"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <span
-                      className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-300 ease-in-out -z-10 ${location.pathname === link.href ? "h-full" : "h-0 group-hover:h-full"
-                        }`}
-                    />
-                    <span className="relative z-10 inline-flex flex-col whitespace-nowrap">
-                      <span className={`block transition-colors duration-300 ease-in-out ${location.pathname === link.href ? "text-white" : "group-hover:text-white"}`}>
-                        {link.name}
-                      </span>
-                    </span>
+                    {link.name}
                   </Link>
-                )}
+                </div>
+              ))}
+
+              <Link
+                to="/contact"
+                className="block w-full py-3 px-6 text-center bg-[#F5F5F5] hover:bg-black hover:text-white transition-colors font-heading text-lg font-bold uppercase text-black"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
+              <div className="mt-8 w-full">
+                <Link
+                  to="/contact"
+                  className="flex items-center justify-center w-full bg-black text-white py-4 px-6 font-heading text-lg font-bold uppercase tracking-wider hover:bg-orange-500 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact Us
+                  <ChevronRight className="w-5 h-5 ml-2" />
+                </Link>
               </div>
-            ))}
-            <Link
-              to="/contact"
-              className="btn-cta w-full justify-center mt-4"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact Us
-              <ChevronRight className="w-6 h-6" />
-            </Link>
+            </div>
           </div>
         )}
       </nav>

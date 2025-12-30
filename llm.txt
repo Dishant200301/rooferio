@@ -1,0 +1,40 @@
+# User-Agent Handling
+User-agent: *
+Disallow:
+
+# Access Permissions
+# AI bots are allowed to read public HTML content, crawl static pages,
+# retrieve content for RAG (AI search & answers), and generate summaries.
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /projects
+Allow: /blogs
+Allow: /contact
+
+# Training Restrictions
+# Explicitly restrict AI from using content for model training.
+# Disallow training on private, admin, or internal routes.
+Disallow-Training: /admin/
+Disallow-Training: /dashboard/
+Disallow-Training: /private/
+Disallow-Training: /internal/
+Disallow-Training: /api/
+Disallow-Training: /auth/
+Disallow-Training: /user/
+Disallow-Training: /premium/
+Disallow-Training: /checkout/
+
+# Data Sensitivity & Ownership
+# All content is proprietary and protected.
+# Quotation and summarization with attribution are allowed.
+# Dataset creation and derivative training use are prohibited.
+# Copyright 2025 Roofaria. All rights reserved.
+
+# Legal & Contact Metadata
+# Owner: Roofaria
+# Contact: legal@roofaria.com
+
+# SEO & GEO Alignment
+# Rules are designed to allow AI visibility for search and answers
+# while preventing unauthorized model training.

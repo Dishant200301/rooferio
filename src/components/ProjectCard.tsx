@@ -42,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 setIsHovering(false);
                 setSliderPosition(100); // Reset to center when mouse leaves
             }}
-            className="relative block bg-[#f5f5f5] h-[300px] group  overflow-hidden"
+            className="relative block bg-[#f5f5f5] h-auto lg:h-[300px] group  overflow-hidden"
         >
             {/* Custom Cursor */}
             {/* <div
@@ -61,7 +61,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
                 {/* Content */}
-                <div className="p-6 flex flex-col justify-between order-2 lg:order-1 relative z-30 bg-[#f5f5f5] h-full">
+                <div className="p-6 flex flex-col justify-between order-2 lg:order-1 relative z-30 bg-[#f5f5f5] h-auto lg:h-full">
                     <div>
                         <span className="inline-block bg-[#ff9436] text-black px-3 py-1 font-heading text-sm font-bold uppercase mb-4">
                             {project.category}
@@ -104,9 +104,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                         />
                     </div>
 
-                   
 
-                   
+
+
                 </div>
             </div>
         </Link>

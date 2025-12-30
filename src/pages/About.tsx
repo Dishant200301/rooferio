@@ -12,13 +12,12 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import AwardsSection from "@/components/sections/AwardsSection";
 import { Helmet } from "react-helmet-async";
 import { PageTransition } from "@/components/PageTransition";
-import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
 
 const timeline = [
   {
     year: "2010",
     title: "The Humble Beginning",
-    description: "What started in a small garage with just one truck, a ladder, and a dream became the foundation of Rooferio. Jake Rooferio believed that honest, quality roofing work done right the first time was the key to success.",
+    description: "What started in a small garage with just one truck, a ladder, and a dream became the foundation of Roofaria. Jake Roofaria believed that honest, quality roofing work done right the first time was the key to success.",
   },
   {
     year: "2012",
@@ -33,7 +32,7 @@ const timeline = [
   {
     year: "2023",
     title: "Awards & Recognition",
-    description: "Rooferio was named 'Best Roofing Company' in Texas by Home Improvement Magazine. A testament to our team's dedication and customer commitment.",
+    description: "Roofaria was named 'Best Roofing Company' in Texas by Home Improvement Magazine. A testament to our team's dedication and customer commitment.",
   },
   {
     year: "2025",
@@ -198,7 +197,8 @@ const About = () => {
     <PageTransition>
       <div className="min-h-screen">
         <Helmet>
-          <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+          <title>About Us - Roofaria | Trusted Roofing Experts in Texas</title>
+          <meta name="description" content="Learn about Roofaria's journey from a one-truck operation to Texas's most trusted roofing company. Meet our team and discover our mission to protect what matters most." />
         </Helmet>
         <Navbar />
         <main>
@@ -237,7 +237,7 @@ const About = () => {
 
                 {/* Heading */}
                 <h1 className="font-heading text-white uppercase font-black leading-[0.9] 
-                         text-5xl md:text-6xl lg:text-[60px]">
+                         text-3xl md:text-6xl lg:text-[60px]">
                   Our Story Is As Sturdy As <br />
                   Our Roofs—Come Meet Us!
                 </h1>
@@ -340,19 +340,19 @@ const About = () => {
 
                   {/* STORY SECTION */}
                   <div id="story-section" className="scroll-mt-2">
-                    <div className="bg-white p-8 md:px-12  md:pt-0">
+                    <div className="bg-white p-2 lg:px-12  md:pt-0">
                       {/* Intro Paragraph */}
-                      <p className="font-body text-lg font-inter font-semibold md:text-2xl leading-relaxed mb-12">
-                        Founded in 2010 with one truck and a dream, Rooferio started as a one-man show with a mission to do roofing differently. What began as small repairs for neighbors has grown into a trusted team serving thousands — but we've never outgrown our roots. We still show up with the same honesty, quality work, and neighborly service. Today, we're a trusted local team — still grounded in the same values that got us here.
+                      <p className="font-body text-base md:text-lg font-inter font-semibold leading-relaxed mb-8 md:mb-12">
+                        Founded in 2010 with one truck and a dream, Roofaria started as a one-man show with a mission to do roofing differently. What began as small repairs for neighbors has grown into a trusted team serving thousands — but we've never outgrown our roots. We still show up with the same honesty, quality work, and neighborly service. Today, we're a trusted local team — still grounded in the same values that got us here.
                       </p>
 
                       {/* Timeline */}
                       <div className="space-y-12">
                         {timeline.map((item) => (
-                          <div key={item.year} className="flex gap-6">
+                          <div key={item.year} className="flex flex-col md:flex-row gap-6">
                             <div className="shrink-0 pt-1">
-                              <span className="font-heading text-4xl md:text-7xl font-bold text-black flex items-center gap-3">
-                                <span className="w-3 h-3 bg-orange-500 inline-block mt-2" />
+                              <span className="font-heading text-3xl md:text-7xl font-bold text-black flex items-center gap-3">
+                                <span className="w-2 h-2 md:w-3 md:h-3 bg-orange-500 inline-block mt-2" />
                                 {item.year}
                               </span>
                             </div>
@@ -360,7 +360,7 @@ const About = () => {
                               <h3 className="font-heading text-xl md:text-3xl font-bold uppercase mb-3 text-black">
                                 {item.title}
                               </h3>
-                              <p className="font-body font-semibold font-inter text-lg opacity-80 leading-relaxed">
+                              <p className="font-body font-semibold font-inter text-base md:text-lg opacity-80 leading-relaxed">
                                 {item.description}
                               </p>
                             </div>
@@ -405,7 +405,7 @@ const About = () => {
                   {/* MISSION SECTION */}
                   <div
                     id="mission-section"
-                    className="scroll-mt-32 px-10"
+                    className="scroll-mt-32 lg:px-10"
                   >
                     <div className="relative min-h-[640px] overflow-hidden bg-[#2f3f45] text-white">
 
@@ -417,12 +417,12 @@ const About = () => {
                       />
 
                       {/* Content */}
-                      <div className="relative z-10 flex h-full flex-col justify-between p-10 md:p-14">
+                      <div className="relative z-10 flex h-full flex-col justify-between p-2 md:p-14">
 
                         {/* Top Content */}
                         <div>
                           {/* Mission Label */}
-                          <div className="mb-6 flex items-center gap-3">
+                          <div className="mb-6 flex items-center gap-3 mt-2">
                             <span className="h-[12px] w-[12px] bg-orange-500" />
                             <span className="text-[16px] font-bold uppercase tracking-[0.25em]">
                               Our Mission
@@ -431,7 +431,7 @@ const About = () => {
                           </div>
 
                           {/* Heading */}
-                          <h2 className="max-w-3xl font-heading text-[56px] leading-[0.95] md:text-[70px] font-extrabold uppercase">
+                          <h2 className="max-w-3xl font-heading text-[32px] leading-[0.95] md:text-[70px] font-extrabold uppercase">
                             To Protect What
                             <br />
                             Matters Most
@@ -439,9 +439,9 @@ const About = () => {
                         </div>
 
                         {/* Bottom Panel */}
-                        <div className="mt-16 max-w-3xl bg-gradient-to-t from-black/80 to-black/40 p-8">
+                        <div className="mt-16 max-w-3xl bg-gradient-to-t from-black/80 to-black/40 p-6 md:p-8">
 
-                          <p className="text-2xl weight-[600] leading-[31px] font-inter font-semibold text-white/95">
+                          <p className="text-lg md:text-2xl weight-[600] leading-[26px] md:leading-[31px] font-inter font-semibold text-white/95">
                             We believe roofing doesn't have to be complicated or intimidating.
                             That's why we show up on time, speak like real humans, and do the job
                             right the first time. Whether it's a tiny leak or a full replacement,
@@ -462,7 +462,7 @@ const About = () => {
                                 Oliver Vance
                               </p>
                               <p className="text-[16px] leading-[22px] font-heading font-bold uppercase tracking-wider text-white/60">
-                                CEO, Rooferio
+                                CEO, Roofaria
                               </p>
                             </div>
                           </div>
@@ -475,7 +475,7 @@ const About = () => {
 
                   {/* VISION SECTION */}
                   <div id="vision-section" className="scroll-mt-32">
-                    <div className="bg-white p-8 md:p-12">
+                    <div className="bg-white p-0 lg:p-12">
                       <div className="mb-6 flex items-center gap-2">
                         <span className="w-3 h-3 bg-orange-500" />
                         <span className="font-heading text-lg font-bold uppercase tracking-widest text-black">
@@ -484,15 +484,15 @@ const About = () => {
                         <span className="w-3 h-3 bg-orange-500" />
                       </div>
 
-                      <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold uppercase mb-12 leading-[0.9] text-black">
+                      <h2 className="font-heading text-3xl md:text-6xl lg:text-7xl font-bold uppercase mb-8 md:mb-12 leading-[0.9] text-black">
                         To Become The Most<br />Trusted Name In Roofing
                       </h2>
 
-                      <div className="bg-light p-8 md:p-12 space-y-8 shadow-sm">
-                        <p className="font-body font-inter font-semibold text-2xl leading-relaxed text-gray-800">
+                      <div className="bg-light p-0 md:p-12 space-y-8 shadow-sm">
+                        <p className="font-body font-inter font-semibold text-lg md:text-2xl leading-relaxed text-gray-800">
                           We envision a future where every homeowner feels confident and cared for when choosing a roofing partner. Our goal is to redefine what it means to work with contractors by delivering not only durable, high-quality work, but also warm, reliable, and transparent service from start to finish.
                         </p>
-                        <p className="font-body font-inter font-semibold text-2xl leading-relaxed text-gray-800">
+                        <p className="font-body font-inter font-semibold text-lg md:text-2xl leading-relaxed text-gray-800">
                           As we grow, we aim to lead the industry in innovation, safety, and sustainability—setting a new standard for professionalism in roofing. Whether we're working on a single-family home or a commercial project, we see every roof as an opportunity to build trust, protect families, and contribute to stronger communities.
                         </p>
                       </div>
@@ -501,7 +501,7 @@ const About = () => {
 
                   {/* VALUES SECTION */}
                   <div id="values-section" className="scroll-mt-32">
-                    <div className="bg-white p-8 md:p-12">
+                    <div className="bg-white p-0 lg:p-12">
                       <div className="mb-6 flex items-center gap-2">
                         <span className="w-3 h-3 bg-orange-500" />
                         <span className="font-heading text-lg font-bold uppercase tracking-widest text-black">
@@ -510,7 +510,7 @@ const About = () => {
                         <span className="w-3 h-3 bg-orange-500" />
                       </div>
 
-                      <h2 className="font-heading text-5xl md:text-6xl font-bold uppercase mb-12 leading-[0.9] text-black">
+                      <h2 className="font-heading text-3xl md:text-6xl font-bold uppercase mb-8 md:mb-12 leading-[0.9] text-black">
                         The Heart Behind<br />The Hard Hats
                       </h2>
 
@@ -543,7 +543,7 @@ const About = () => {
                             <div className={`overflow-hidden transition-all duration-300 ${activeValue === index ? "max-h-96 bg-gray-50" : "max-h-0"
                               }`}>
                               <div className="p-6 md:p-8">
-                                <p className="font-body text-lg font-semibold font-inter leading-relaxed text-gray-700">
+                                <p className="font-body text-base md:text-lg font-semibold font-inter leading-relaxed text-gray-700">
                                   {value.content}
                                 </p>
                               </div>
@@ -573,18 +573,18 @@ const About = () => {
               </div>
 
               {/* Main Heading */}
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-12 leading-tight text-black">
+              <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold uppercase mb-8 md:mb-12 leading-tight text-black">
                 Hard Hats On, Results Up
               </h2>
 
               {/* Top Two Large Stats */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Roofs Installed */}
-                <div className="bg-white p-8 md:p-12">
+                <div className="bg-white p-6 md:p-12">
                   <p className="font-heading text-sm md:text-base font-bold uppercase mb-4 tracking-wide text-black">
                     Roofs Happily Installed
                   </p>
-                  <p className="font-heading text-6xl md:text-7xl lg:text-8xl font-bold mb-4 text-black">
+                  <p className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-black">
                     2450<span className="text-orange-500">+</span>
                   </p>
                   <p className="font-body text-sm md:text-base text-gray-600">
@@ -593,11 +593,11 @@ const About = () => {
                 </div>
 
                 {/* Happy Customer Rating */}
-                <div className="bg-white p-8 md:p-12">
+                <div className="bg-white p-6 md:p-12">
                   <p className="font-heading text-sm md:text-base font-bold uppercase mb-4 tracking-wide text-black">
                     Happy Customer Rating
                   </p>
-                  <p className="font-heading text-6xl md:text-7xl lg:text-8xl font-bold mb-4 text-black">
+                  <p className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-black">
                     98.7<span className="text-orange-500">%</span>
                   </p>
                   <p className="font-body text-sm md:text-base text-gray-600">
@@ -609,7 +609,7 @@ const About = () => {
               {/* Bottom Three Smaller Stats */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* 99% On-Time */}
-                <div className="bg-white p-8 md:p-10">
+                <div className="bg-white p-6 md:p-10">
                   <p className="font-heading text-base md:text-lg font-bold uppercase mb-3 tracking-wide text-black">
                     99% On-Time<br />Project Completion
                   </p>
@@ -619,7 +619,7 @@ const About = () => {
                 </div>
 
                 {/* 645 Storm Damaged */}
-                <div className="bg-white p-8 md:p-10">
+                <div className="bg-white p-6 md:p-10">
                   <p className="font-heading text-base md:text-lg font-bold uppercase mb-3 tracking-wide text-black">
                     645 Storm-Damaged<br />Roofs Rescued
                   </p>
@@ -629,7 +629,7 @@ const About = () => {
                 </div>
 
                 {/* 93% of Customers */}
-                <div className="bg-white p-8 md:p-10">
+                <div className="bg-white p-6 md:p-10">
                   <p className="font-heading text-base md:text-lg font-bold uppercase mb-3 tracking-wide text-black">
                     93% Of Customers<br />Refer Us To A Friend
                   </p>
@@ -652,7 +652,7 @@ const About = () => {
               </div>
 
               {/* Main Heading */}
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-12 leading-tight">
+              <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold uppercase mb-8 md:mb-12 leading-tight">
                 The Hands (And Hearts)<br />Behind Your Roof
               </h2>
 
@@ -778,7 +778,7 @@ const About = () => {
                     <span className="font-heading text-lg font-bold uppercase tracking-widest text-black">CAREER</span>
                     <span className="w-3 h-3 bg-orange-500" />
                   </div>
-                  <h2 className="font-heading text-4xl md:text-6xl font-bold uppercase leading-[0.9] text-black">
+                  <h2 className="font-heading text-3xl md:text-6xl font-bold uppercase leading-[0.9] text-black">
                     Join The Crew,<br />Climb Higher
                   </h2>
                 </div>
@@ -791,21 +791,21 @@ const About = () => {
                       className="sticky top-0"
                       style={{ top: `${100 + (index * 0)}px`, zIndex: index + 1 }}
                     >
-                      <div className="bg-[#fffcfc] px-10 border-b border-[#d0cece] py-10 transition-all duration-300 shadow-sm ">
+                      <div className="bg-[#fffcfc] px-6 md:px-10 border-b border-[#d0cece] py-10 transition-all duration-300 shadow-sm ">
                         <h3 className="font-heading text-2xl md:text-3xl font-bold uppercase text-black mb-6">
                           {job.title}
                         </h3>
 
                         <div className="space-y-3 mb-8">
-                          <div className="flex items-center gap-3 text-lg font-bold font-heading uppercase text-black">
+                          <div className="flex items-center gap-3 text-base md:text-lg font-bold font-heading uppercase text-black">
                             <img src="/image/icon/career-1.svg" className="w-6 h-6" />
                             <span>Jul 15, 2025</span>
                           </div>
-                          <div className="flex items-center gap-3 text-lg font-bold font-heading uppercase text-black">
+                          <div className="flex items-center gap-3 text-base md:text-lg font-bold font-heading uppercase text-black">
                             <img src="/image/icon/career-2.svg" className="w-6 h-6" />
                             <span>{job.type}</span>
                           </div>
-                          <div className="flex items-center gap-3 text-lg font-bold font-heading uppercase text-black">
+                          <div className="flex items-center gap-3 text-base md:text-lg font-bold font-heading uppercase text-black">
                             <img src="/image/icon/career-3.svg" className="w-6 h-6" />
                             <span>{job.salary}</span>
                           </div>
@@ -821,7 +821,7 @@ const About = () => {
                 </div>
 
                 {/* Bottom CTA with spacing so the last card clears */}
-                <div className="mt-32 bg-black text-white py-12 px-6 xl:px-0 text-center relative">
+                <div className="mt-16 md:mt-32 bg-black text-white py-12 px-6 xl:px-0 text-center relative">
                   <p className="font-body text-lg md:text-xl font-semibold leading-relaxed max-w-xl mx-auto">
                     If you don't see an open position that fits, we'd still love to hear from you!
                     <a href="#" className="text-orange-500 underline ml-2">Drop us a note</a> about how we could collaborate—we're always excited to connect with talented people and grow together.

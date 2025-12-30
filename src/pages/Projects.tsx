@@ -14,40 +14,40 @@ const Projects = () => {
   return (
     <PageTransition>
       <div className="min-h-screen">
-      <Helmet>
-        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
-      </Helmet>
-      <Navbar />
-      <main>
-        {/* Hero */}
-        <section className="bg-background py-12 md:py-16">
-          <div className="container mx-auto px-5 md:px-12 xl:px-0">
-            <div className="section-label-left mb-4">Our Projects</div>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-semibold uppercase leading-tight max-w-6xl">
-              Sometimes The Best Way To Trust A<br />
-              Roofer Is To See The Difference Yourself.
-            </h1>
-          </div>
-        </section>
-
-        {/* Projects Grid */}
-        <section className="bg-background py-8 md:py-12">
-          <div className="container mx-auto px-5 md:px-12 xl:px-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projectDetails.map((project) => (
-                <ProjectCard key={project.slug} project={project} />
-              ))}
+        <Helmet>
+          <title>Roofaria - Roofer and Roofing Service Framer Template</title>
+        </Helmet>
+        <Navbar />
+        <main>
+          {/* Hero */}
+          <section className="bg-background py-8 md:py-16">
+            <div className="container mx-auto px-5 md:px-12 xl:px-0">
+              <div className="section-label-left mb-4">Our Projects</div>
+              <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-semibold uppercase leading-tight max-w-6xl">
+                Sometimes The Best Way To Trust A<br />
+                Roofer Is To See The Difference Yourself.
+              </h1>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Contact CTA */}
-        <ContactSection />
+          {/* Projects Grid */}
+          <section className="bg-background py-8 md:py-12">
+            <div className="container mx-auto px-5 md:px-12 xl:px-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {projectDetails.map((project) => (
+                  <ProjectCard key={project.slug} project={project} />
+                ))}
+              </div>
+            </div>
+          </section>
 
-        {/* Silhouette */}
-        {/* <RooferSilhouette /> */}
-      </main>
-      <Footer />    </div>
+          {/* Contact CTA */}
+          <ContactSection />
+
+          {/* Silhouette */}
+          {/* <RooferSilhouette /> */}
+        </main>
+        <Footer />    </div>
     </PageTransition>
   );
 };

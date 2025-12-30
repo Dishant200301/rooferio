@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Facebook, Twitter, Youtube, Instagram, PiIcon as Pinterest } from "lucide-react";
 
-const pageLinks = ["Home", "About us", "Services", "Projects", "Albums", "Blogs", "Career", "Reviews", "Contact"];
+const pageLinks = [
+  { name: "Home", href: "/" },
+  { name: "About us", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blogs", href: "/blogs" },
+  { name: "Contact", href: "/contact" },
+];
 
 const serviceLinks = [
-  "Roof Installation",
-  "Roof Repair",
-  "Roof Replacement",
-  "Roof Inspections",
-  "Roof Coating",
-  "Commercial Roofing",
+  { name: "Roof Installation", href: "/services/installation" },
+  { name: "Roof Repair", href: "/services/repair" },
+  { name: "Roof Replacement", href: "/services/replacement" },
+  { name: "Roof Inspections", href: "/services/inspections" },
+  { name: "Roof Coating", href: "/services/coating" },
+  { name: "Commercial Roofing", href: "/services/commercial" },
 ];
 
 const roofingTypes = [
@@ -47,55 +54,53 @@ export function Footer() {
 
       <div className="bg-black text-white px-6 lg:px-0 pt-12 container mx-auto max-w-[1480px]">
         {/* --- TOP SECTION (Links & Newsletter) --- */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 border-t border-b ${borderColor}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {/* Pages */}
-            <div className={`p-8 lg:p-10 border-l ${borderColor}`}>
-              <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Pages</h3>
-              <ul className="space-y-0">
-                {pageLinks.map((link) => (
-                  <li key={link}>
-                    <Link to="#" className="text-[18px] font-semibold font-inter text-gray-300 hover:text-white transition-colors">{link}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className={`grid grid-cols-2 lg:grid-cols-6 border-t border-b ${borderColor}`}>
+          {/* Pages */}
+          <div className={`col-span-1 p-6 md:p-8 lg:p-10 border-l border-b lg:border-b-0 sm:border-r lg:border-r-0 ${borderColor}`}>
+            <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Pages</h3>
+            <ul className="space-y-0">
+              {pageLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-[18px] font-semibold font-inter text-gray-300 hover:text-white transition-colors">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Services */}
-            <div className={`p-8 lg:p-10`}>
-              <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Services</h3>
-              <ul className="space-y-0">
-                {serviceLinks.map((link) => (
-                  <li key={link}>
-                    <Link to="#" className="text-[18px] font-semibold text-gray-300 hover:text-white transition-colors">{link}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Services */}
+          <div className={`col-span-1 p-6 md:p-8 lg:p-10 border-b lg:border-b-0 border-r lg:border-r-0 ${borderColor}`}>
+            <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Services</h3>
+            <ul className="space-y-0">
+              {serviceLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-[18px] font-semibold text-gray-300 hover:text-white transition-colors">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Roofing Types */}
-            <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
-              <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Roofing Types</h3>
-              <ul className="space-y-0">
-                {roofingTypes.map((type) => (
-                  <li key={type} className="text-[18px] font-semibold text-gray-300">
-                    {type}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Roofing Types */}
+          <div className={`col-span-2 md:col-span-1 lg:col-span-1 p-6 md:p-8 lg:p-10 border-l lg:border-l-0 border-r border-b md:border-b-0 ${borderColor}`}>
+            <h3 className="text-orange-500 text-lg font-bold uppercase mb-3 tracking-wider">Roofing Types</h3>
+            <ul className="space-y-0">
+              {roofingTypes.map((type) => (
+                <li key={type} className="text-[18px] font-semibold text-gray-300">
+                  {type}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Newsletter & Socials */}
-          <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
+          <div className={`col-span-2 md:col-span-1 lg:col-span-3 p-6 md:p-8 lg:p-10 border-l md:border-l-0 border-r ${borderColor}`}>
             <h3 className="text-white text-lg font-bold uppercase mb-6 tracking-wider">Subscribe to the newsletter</h3>
-            <div className="flex mb-[120px]">
+            <div className="flex flex-col sm:flex-row mb-10 md:mb-[120px] gap-4 sm:gap-0">
               <input
                 type="email"
                 placeholder="jane@framer.com"
-                className="flex-1 bg-[#121212] px-4 py-3 text-[16px] border-none focus:ring-0 placeholder-gray-600 outline-none"
+                className="flex-1 bg-[#121212] px-4 py-3 text-[16px] border-none focus:ring-0 placeholder-gray-600 outline-none w-full"
               />
-              <button className="bg-orange-500 text-black px-6 py-3 text-[16px] font-bold uppercase tracking-widest hover:bg-orange-600 transition-colors">
+              <button className="bg-orange-500 text-black px-6 py-3 text-[16px] font-bold uppercase tracking-widest hover:bg-orange-600 transition-colors w-full sm:w-auto">
                 Subscribe
               </button>
             </div>
@@ -104,7 +109,7 @@ export function Footer() {
               {socialLinks.map((social) => (
                 <button
                   key={social.name}
-                  className={`flex items-center gap-2 bg-[#0A0A0A] hover:bg-[#ff9436] p-3 text-[16px] font-bold uppercase border-r border-b border-[#1A1A1A] hover:text-black transition-all group`}
+                  className={`flex items-center gap-2 bg-[#0A0A0A] hover:bg-[#ff9436] p-3 text-[16px] font-bold uppercase border-r border-b border-[#1A1A1A] hover:text-black transition-all group justify-center xl:justify-start`}
                 >
                   <img
                     src={social.icon}
@@ -120,22 +125,22 @@ export function Footer() {
 
         {/* --- CONTACT INFO ROW --- */}
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b ${borderColor}`}>
-          <div className={`p-8 lg:p-10 border-l border-r ${borderColor}`}>
+          <div className={`p-6 md:p-8 lg:p-10 border-b sm:border-b-0 sm:border-r border-l border-r ${borderColor}`}>
             <h4 className="text-orange-500 text-lg font-bold uppercase mb-4 tracking-wider">Phone</h4>
             <p className="text-[18px] font-semibold text-gray-300">(217) 555-0134</p>
             <p className="text-[18px] font-semibold text-gray-300">(217) 444-0134</p>
           </div>
-          <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
+          <div className={`p-6 md:p-8 lg:p-10 border-b sm:border-b-0 sm:border-r border-l border-r ${borderColor}`}>
             <h4 className="text-orange-500 text-lg font-bold uppercase mb-4 tracking-wider">Email</h4>
-            <p className="text-[18px] font-semibold text-gray-300">rooferio@email.com</p>
+            <p className="text-[18px] font-semibold text-gray-300">roofaria@email.com</p>
           </div>
-          <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
+          <div className={`p-6 md:p-8 lg:p-10 border-b border-l border-r sm:border-b-0 sm:border-r sm:border-l ${borderColor}`}>
             <h4 className="text-orange-500 text-lg font-bold uppercase mb-4 tracking-wider">Address</h4>
             <p className="text-[18px] font-semibold text-gray-300 leading-relaxed">
               123 Main Street, Suite 200, Austin, TX 78701
             </p>
           </div>
-          <div className={`p-8 lg:p-10 border-r ${borderColor}`}>
+          <div className={`p-6 md:p-8 lg:p-10 border-l border-r  ${borderColor}`}>
             <h4 className="text-orange-500 text-lg font-bold uppercase mb-4 tracking-wider ">Opening Hours</h4>
             <p className="text-[18px] font-semibold text-gray-300">Mon to Sat: 9.00am - 8.30pm</p>
             <p className="text-[18px] font-semibold text-gray-300">Sun: Closed</p>
@@ -146,7 +151,7 @@ export function Footer() {
         <div className="relative px-4 pt-10 pb-10 overflow-hidden">
           <div className="flex flex-col lg:flex-row justify-between items-start">
             <h2 className="font-heading text-[20vw] lg:text-[311px] font-[400] uppercase leading-[211px] tracking-tighter text-white -ml-2">
-              Rooferio
+              Roofaria
             </h2>
             <div className="text-[16px] text-gray-300 text-left max-w-[280px] mt-4 lg:mt-12 lg:mr-4 font-medium">
               <p>Roofs built to last.</p>
@@ -169,7 +174,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 
 }

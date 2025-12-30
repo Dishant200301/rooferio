@@ -89,13 +89,13 @@ export function PortfolioSection() {
   }, []);
 
   return (
-    <section className="bg-[#f5f5f5] py-20 overflow-hidden flex flex-col items-center border-b border-gray-100 min-h-[600px] md:min-h-[900px]">
+    <section className="bg-[#f5f5f5] py-20 overflow-hidden flex flex-col items-center border-b border-gray-100 min-h-[900px] md:min-h-[900px]">
       {/* Header Section */}
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px] text-center mb-20 relative z-10">
         {/* Eyebrow Label */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <span className="w-2 h-2 bg-orange-500 rounded-sm"></span>
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-gray-800">
+          <span className="text-[16px] font-heading font-bold tracking-[0.3em] uppercase text-gray-800">
             OUR PORTFOLIO
           </span>
           <span className="w-2 h-2 bg-orange-500 rounded-sm"></span>
@@ -109,12 +109,12 @@ export function PortfolioSection() {
         </h2>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-3">
-          <button className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-gray-900 transition-all">
+        <div className="grid grid-cols-2 sm:flex sm:flex-row justify-center gap-3">
+          <button className="flex items-center font-heading justify-center gap-3 bg-black text-white px-4 md:px-8 py-4 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-gray-900 transition-all">
             VIEW PROJECTS
             <ChevronRight className="w-4 h-4 stroke-[3px]" />
           </button>
-          <button className="flex items-center justify-center gap-3 bg-black text-white px-8 py-4 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-gray-900 transition-all">
+          <button className="flex items-center font-heading justify-center gap-3 bg-black text-white px-4 md:px-8 py-4 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-gray-900 transition-all">
             VIEW GALLERY
             <ChevronRight className="w-4 h-4 stroke-[3px]" />
           </button>
@@ -123,7 +123,7 @@ export function PortfolioSection() {
 
       {/* 3D Carousel */}
       <div
-        className="w-full h-[300px] relative flex items-center justify-center perspective-container overflow-hidden scale-[0.5] md:scale-100"
+        className="w-full h-[300px] md:h-[300px] relative flex items-center justify-center perspective-container overflow-hidden scale-[1.2] md:scale-100"
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}

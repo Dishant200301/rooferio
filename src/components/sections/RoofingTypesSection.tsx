@@ -46,14 +46,14 @@ const RoofingCard = ({ type }: { type: typeof roofingTypes[0] }) => {
   return (
     <div
       ref={cardRef}
-      className="bg-light-alt relative overflow-hidden cursor-none group p-4"
+      className="bg-light-alt relative overflow-hidden md:cursor-none group p-4"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       {/* Cursor Follower */}
       <div
-        className="absolute z-50 pointer-events-none transition-opacity duration-150 ease-out"
+        className="hidden md:block absolute z-50 pointer-events-none transition-opacity duration-150 ease-out"
         style={{
           left: 0,
           top: 0,
@@ -81,7 +81,7 @@ const RoofingCard = ({ type }: { type: typeof roofingTypes[0] }) => {
       </p>
 
       {/* Image */}
-      <div className="bg-light h-96 mb-4 overflow-hidden">
+      <div className="bg-light h-64 md:h-96 mb-4 overflow-hidden">
         <img
           src={type.image}
           alt={type.title}
@@ -139,9 +139,9 @@ export function RoofingTypesSection() {
       `}</style>
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px]">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <div className="section-label mb-4">Roofing Types</div>
-          <h2 className="section-heading">
+          <h2 className="section-heading text-3xl md:text-6xl lg:text-7xl">
             Shingle? Metal? Tile?<br />
             Let's Find Your Match
           </h2>

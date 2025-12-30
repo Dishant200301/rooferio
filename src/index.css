@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Primary Colors - Rooferio Brand */
+    /* Primary Colors - Roofaria Brand */
     --background: 0 0% 100%;
     --foreground: 0 0% 8%;
 
@@ -139,7 +139,7 @@
     @apply font-heading;
   }
 
- 
+
 }
 
 @layer components {

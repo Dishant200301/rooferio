@@ -33,7 +33,7 @@ export function VideoSection() {
                     {/* Play Button */}
                     {!isPlaying && (
                         <div className="absolute inset-0 flex items-center justify-center z-10">
-                            <div className="w-20 h-20 md:w-20 md:h-20 bg-orange-500 flex items-center justify-center transition-transform duration-300">
+                            <div className="w-14 h-14 md:w-20 md:h-20 bg-orange-500 flex items-center justify-center transition-transform duration-300">
                                 <Play className="w-6 h-6 md:w-8 md:h-8 text-black fill-black ml-1" />
                             </div>
                         </div>

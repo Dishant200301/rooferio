@@ -70,8 +70,8 @@ export const blogs: Blog[] = [
   },
   {
     id: "6",
-    slug: "rooferio-best-roofing-company-2025",
-    title: "We Won! Rooferio Named Best Roofing Company Of 2025 🏆",
+    slug: "roofaria-best-roofing-company-2025",
+    title: "We Won! Roofaria Named Best Roofing Company Of 2025 🏆",
     category: "News",
     date: "May 14, 2025",
     author: "Bramwell Cutter",

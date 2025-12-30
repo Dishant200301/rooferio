@@ -17,8 +17,8 @@ const badges = [
   {
     id: "yelp",
     icon: <div className="relative w-5 h-5">
-        <img src="/image/review-2.svg" alt="" />
-      </div>,
+      <img src="/image/review-2.svg" alt="" />
+    </div>,
     rating: "5.00",
     subtitle: "200+ Yelp Reviews",
     hasStar: true
@@ -26,8 +26,8 @@ const badges = [
   {
     id: "bbb",
     icon: <div className="relative w-5 h-5">
-        <img src="/image/review-3.svg" alt="" />
-      </div>,
+      <img src="/image/review-3.svg" alt="" />
+    </div>,
     rating: "A+",
     subtitle: "BBB Rating",
     hasStar: false
@@ -97,8 +97,8 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => {
   const [showImage, setShowImage] = useState(false);
 
   return (
-    <div className="bg-white pt-12 pb-8 px-8 md:px-12 relative shadow-sm border border-gray-100 flex flex-col justify-between min-h-[420px]">
-     
+    <div className="bg-white pt-8 md:pt-12 pb-6 md:pb-8 px-6 md:px-12 relative shadow-sm border border-gray-100 flex flex-col justify-between min-h-[380px] md:min-h-[420px]">
+
 
       {/* Content Area with Animation */}
       <div className="relative flex-1 overflow-hidden">
@@ -107,7 +107,7 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => {
           className={`transition-all duration-500 ease-in-out transform ${showImage ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
             }`}
         >
-          <p className="font-body text-[20px] md:text-[22px] font-bold text-[#1a1a1a] leading-[1.5] mt-6">
+          <p className="font-body text-lg md:text-[22px] font-bold text-[#1a1a1a] leading-[1.5] mt-4 md:mt-6">
             {review.quote}
           </p>
         </div>
@@ -126,12 +126,12 @@ const ReviewCard = ({ review }: { review: typeof reviews[0] }) => {
       </div>
 
       {/* Footer */}
-      <div className="flex items-end justify-between border-t border-gray-100 pt-8 mt-8 relative z-10 bg-white">
+      <div className="flex items-end justify-between border-t border-gray-100 pt-6 md:pt-8 mt-6 md:mt-8 relative z-10 bg-white">
         <div>
-          <h4 className="font-heading text-[18px] font-black uppercase text-[#1a1a1a] mb-1 tracking-tight">
+          <h4 className="font-heading text-[16px] md:text-[18px] font-black uppercase text-[#1a1a1a] mb-1 tracking-tight">
             {review.name}
           </h4>
-          <p className="font-body text-[13px] text-gray-500 font-semibold">
+          <p className="font-body text-[12px] md:text-[13px] text-gray-500 font-semibold">
             {review.meta}
           </p>
         </div>
@@ -179,15 +179,15 @@ export function TestimonialsSection() {
     <section className="bg-[#f9f9f9] py-20 md:py-28">
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px]">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center items-center gap-3 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <div className="flex justify-center items-center gap-3 mb-4 md:mb-6">
             <span className="w-2.5 h-2.5 bg-orange-500" />
             <span className="text-[15px] font-bold uppercase tracking-[0.15em] text-[#1a1a1a] font-heading">
               Reviews
             </span>
             <span className="w-2.5 h-2.5 bg-orange-500" />
           </div>
-          <h2 className="font-heading text-[42px] md:text-[64px] font-black uppercase leading-[0.9] text-[#1a1a1a] tracking-tight">
+          <h2 className="font-heading text-3xl md:text-5xl lg:text-[64px] font-black uppercase leading-[0.9] text-[#1a1a1a] tracking-tight">
             Don't Take Our Word<br />
             For It — Take Theirs
           </h2>
@@ -198,18 +198,18 @@ export function TestimonialsSection() {
           {/* Connecting Line */}
           <div className="absolute top-1/2 left-0 w-full h-px bg-gray-200 -translate-y-1/2 hidden md:block" />
 
-          <div className="flex flex-wrap justify-center md:justify-between gap-6 relative z-10">
+          <div className="flex flex-wrap justify-center md:justify-between gap-4 md:gap-6 relative z-10">
             {badges.map((badge) => (
-              <div key={badge.id} className="bg-white p-4 flex items-center gap-4 min-w-[280px] shadow-sm">
-                <div className="w-12 h-12 bg-[#f5f5f5] flex items-center justify-center shrink-0">
+              <div key={badge.id} className="bg-white p-3 md:p-4 flex items-center gap-3 md:gap-4 min-w-[260px] md:min-w-[280px] shadow-sm">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#f5f5f5] flex items-center justify-center shrink-0">
                   {badge.icon}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-heading text-[24px] font-bold text-[#1a1a1a] leading-none">{badge.rating}</span>
+                    <span className="font-heading text-[20px] md:text-[24px] font-bold text-[#1a1a1a] leading-none">{badge.rating}</span>
                     {badge.hasStar && <Star className="w-4 h-4 fill-orange-500 text-orange-500" />}
                   </div>
-                  <p className="font-body text-[12px] font-bold text-[#1a1a1a] mt-1">{badge.subtitle}</p>
+                  <p className="font-body text-[11px] md:text-[12px] font-bold text-[#1a1a1a] mt-1">{badge.subtitle}</p>
                 </div>
               </div>
             ))}

@@ -63,7 +63,7 @@ function ServiceCard({ service }: ServiceCardProps) {
     <Link
       ref={cardRef}
       to={service.href}
-      className="service-card group relative flex flex-col md:flex-row bg-[#f5f5f5] overflow-hidden cursor-none"
+      className="service-card group relative flex flex-col-reverse md:flex-row bg-[#f5f5f5] overflow-hidden md:cursor-none h-auto md:h-80"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -74,9 +74,8 @@ function ServiceCard({ service }: ServiceCardProps) {
           {service.title}
         </h3>
 
-        {/* Hover Button (Cursor Follower) */}
         <div
-          className="absolute z-50 pointer-events-none transition-opacity duration-150 ease-out"
+          className="hidden md:block absolute z-50 pointer-events-none transition-opacity duration-150 ease-out"
           style={{
             left: 0,
             top: 0,
@@ -95,11 +94,11 @@ function ServiceCard({ service }: ServiceCardProps) {
       </div>
 
       {/* Image */}
-      <div className="w-full h-[200px] md:w-[240px] md:h-full shrink-0">
+      <div className="w-full h-[220px] md:w-[240px] md:h-full shrink-0">
         <img
           src={service.image}
           alt={service.title}
-          className="w-full h-full object-cover md:py-4 md:pr-4"
+          className="w-full h-full object-cover p-4 md:py-4 md:pr-4"
         />
       </div>
     </Link>
@@ -112,7 +111,7 @@ export function ServicesSection() {
       {/* Section Header */}
       <div className="text-center mb-12">
         <div className="section-label mb-4">Our Services</div>
-        <h2 className="section-heading">
+        <h2 className="section-heading text-4xl md:text-6xl lg:text-7xl">
           We Climb So You<br />
           Don't Have To
         </h2>
@@ -129,7 +128,7 @@ export function ServicesSection() {
       `}</style>
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px]">
         {/* Service Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 mb-12">
           {services.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}

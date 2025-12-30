@@ -41,16 +41,16 @@ const ProjectDetail = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-0 items-start mb-16">
                                 {/* Left: Title & Description */}
                                 <div>
-                                    <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-[1.1] mb-8">
+                                    <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold uppercase leading-[1.1] mb-8">
                                         {project.title}
                                     </h1>
-                                    <p className="font-inter font-bold mt-32 text-[24px] leading-relaxed text-white/80 max-w-xl">
+                                    <p className="font-inter font-bold mt-10 md:mt-32 text-lg md:text-[24px] leading-relaxed text-white/80 max-w-xl">
                                         {project.description}
                                     </p>
                                 </div>
 
                                 {/* Right: Meta Information Table */}
-                                <div className="border border-white/20 text-[16px] uppercase mt-36 font-heading">
+                                <div className="border border-white/20 text-sm md:text-[16px] uppercase mt-10 md:mt-36 font-heading">
                                     <div className="divide-y divide-white/20">
                                         {[
                                             { label: "CLIENT", value: project.client, icon: "/image/icon/Client.svg" },
@@ -63,10 +63,10 @@ const ProjectDetail = () => {
                                             { label: "MATERIALS", value: project.materials.join(", "), icon: "/image/icon/Materials.svg" },
                                         ].map((item, i) => (
                                             <div key={i} className="grid grid-cols-[160px_1fr] items-center">
-                                                <div className="p-3 border-r border-white/20 bg-white/5 flex items-center font-heading font-bold gap-2 text-[rgba(255, 255, 255, 0.5)]">
+                                                <div className="p-3 border-r border-white/20 bg-black flex items-center font-heading font-bold gap-2 text-[rgba(255, 255, 255, 0.5)]">
                                                     <img src={item.icon} alt="" className="w-4 h-4 brightness-0 invert" /> {item.label}
                                                 </div>
-                                                <div className="p-3 font-inter text-[rgba(255, 255, 255, 0.5)] pl-5">{item.value}</div>
+                                                <div className="p-3 font-inter text-[rgba(255, 255, 255, 0.5)] bg-[#0d0d0d] pl-5">{item.value}</div>
                                             </div>
                                         ))}
                                     </div>
@@ -74,7 +74,7 @@ const ProjectDetail = () => {
                             </div>
 
                             {/* Hero Image */}
-                            <div className="w-full h-[400px] md:h-[500px] lg:h-[680px] lg:w-[1340px] overflow-hidden">
+                            <div className="w-full h-[300px] md:h-[500px] lg:h-[680px] lg:w-[1340px] overflow-hidden">
                                 <img
                                     src={project.heroImage}
                                     alt={project.title}
@@ -87,7 +87,7 @@ const ProjectDetail = () => {
                     {/* What We Did Section - Light Gray Box */}
                     <section className="bg-white py-20">
                         <div className="container mx-auto px-5 md:px-12 flex justify-center">
-                            <div className="bg-[#f4f4f4] p-12 md:p-16 lg:p-20 max-w-4xl w-full">
+                            <div className="bg-[#f4f4f4] p-6 md:p-16 lg:p-20 max-w-4xl w-full">
                                 <div className="mb-10">
                                     <h2 className="font-heading text-3xl md:text-3xl font-bold uppercase mb-6">WHAT WE DID</h2>
                                     <p className="font-inter text-base md:text-lg text-black font-inter font-semibold">This project was a detective job first, then a precision fix.</p>
@@ -101,7 +101,7 @@ const ProjectDetail = () => {
                                             </h3>
                                             <ul className="space-y-3">
                                                 {section.bullets.map((bullet, idx) => (
-                                                    <li key={idx} className="flex items-start gap-3 font-inter font-semibold text-lg text-black">
+                                                    <li key={idx} className="flex items-start gap-3 font-inter font-semibold text-base md:text-lg text-black">
                                                         <span className="text-black font-bold mt-0 shrink-0">•</span>
                                                         <span>{bullet}</span>
                                                     </li>
@@ -127,12 +127,12 @@ const ProjectDetail = () => {
                     {/* Challenges Section - Light Gray Background */}
                     <section className="bg-white py-10">
                         <div className="container mx-auto px-5 md:px-12 flex justify-center">
-                            <div className="bg-[#f4f4f4] p-12 md:p-16 lg:p-20 max-w-4xl w-full space-y-12">
+                            <div className="bg-[#f4f4f4] p-6 md:p-16 lg:p-20 max-w-4xl w-full space-y-12">
                                 <div>
                                     <h3 className="font-heading text-xl md:text-3xl font-bold uppercase mb-6">Challenges We Faced</h3>
                                     <ul className="space-y-3">
                                         {project.challenges.map((c, i) => (
-                                            <li key={i} className="flex items-start gap-3 font-inter font-semibold text-lg text-black">
+                                            <li key={i} className="flex items-start gap-3 font-inter font-semibold text-base md:text-lg text-black">
                                                 <span className="font-bold mt-0">•</span> {c}
                                             </li>
                                         ))}
@@ -142,7 +142,7 @@ const ProjectDetail = () => {
                                     <h3 className="font-heading text-xl md:text-3xl font-bold uppercase mb-6">Why This Project Stands Out</h3>
                                     <ul className="space-y-3">
                                         {project.whyItStandsOut.map((p, i) => (
-                                            <li key={i} className="flex items-start gap-3 font-inter font-semibold text-lg text-black">
+                                            <li key={i} className="flex items-start gap-3 font-inter font-semibold text-base md:text-lg text-black">
                                                 <span className="font-bold mt-0">•</span> {p}
                                             </li>
                                         ))}
@@ -150,7 +150,7 @@ const ProjectDetail = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-heading text-xl md:text-3xl font-bold uppercase mb-6">Final Result</h3>
-                                    <p className="font-inter font-semibold text-lg text-black leading-relaxed">
+                                    <p className="font-inter font-semibold text-base md:text-lg text-black leading-relaxed">
                                         {project.finalResult}
                                     </p>
                                 </div>
@@ -161,7 +161,7 @@ const ProjectDetail = () => {
                     {/* Testimonial Section - Dark Layout */}
                     <section className="w-full bg-white py-20">
                         <div className="max-w-[1200px] mx-auto px-6">
-                            <div className="bg-black text-white px-14 py-16">
+                            <div className="bg-black text-white px-6 py-10 md:px-14 md:py-16">
 
                                 <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-16 items-center">
 
@@ -213,14 +213,14 @@ const ProjectDetail = () => {
                     </section>
 
                     {/* Gallery Section */}
-                    <section className="bg-[#f4f4f4] py-24">
+                    <section className="bg-[#f4f4f4] py-12 md:py-24">
                         <div className="container mx-auto px-5 md:px-12">
                             <div className="mb-12">
                                 <div className="flex items-center gap-2 font-heading text-[16px] font-bold uppercase tracking-widest text-black mb-4">
                                     <span className="w-4 h-4 bg-orange-500"></span> PROJECT IMAGES
                                     <span className="w-4 h-4 bg-orange-500"></span>
                                 </div>
-                                <h2 className="font-heading text-5xl md:text-6xl font-bold uppercase leading-none">
+                                <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold uppercase leading-none">
                                     Every Angle, Every Detail
                                 </h2>
                             </div>
@@ -235,7 +235,7 @@ const ProjectDetail = () => {
                     </section>
 
                     {/* Other Projects Section */}
-                    <section className="bg-black text-white py-24">
+                    <section className="bg-black text-white py-12 md:py-24">
                         <div className="container mx-auto px-5 md:px-12">
 
                             {/* Section Header */}
@@ -248,7 +248,7 @@ const ProjectDetail = () => {
                                     <span className="w-3 h-3 bg-orange-500" />
                                 </div>
 
-                                <h2 className="font-heading text-[42px] md:text-[60px] font-extrabold uppercase leading-[1.1]">
+                                <h2 className="font-heading text-3xl md:text-[42px] lg:text-[60px] font-extrabold uppercase leading-[1.1]">
                                     Other Projects You <br />
                                     May Feel Inspiring
                                 </h2>
@@ -278,7 +278,7 @@ const ProjectDetail = () => {
                     <ContactSection />
                 </main>
                 <Footer />    </div>
-        </PageTransition>
+        </PageTransition >
     );
 };
 

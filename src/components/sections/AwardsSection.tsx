@@ -15,7 +15,7 @@ const awards: Award[] = [
       "Presented for outstanding craftsmanship and creativity in residential roofing.",
     icon: (
       <div >
-       <img src="/image/ultra.svg" alt="" />
+        <img src="/image/ultra.svg" alt="" />
       </div>
     ),
   },
@@ -26,7 +26,7 @@ const awards: Award[] = [
       "Recognized as one of the most trusted and top-rated roofing teams in the tri-county area.",
     icon: (
       <div>
-       <img src="/image/top.svg" alt="" />
+        <img src="/image/top.svg" alt="" />
       </div>
     ),
   },
@@ -37,7 +37,7 @@ const awards: Award[] = [
       "Presented to roofing pros using sustainable materials and green work practices.",
     icon: (
       <div>
-       <img src="/image/ultimate.svg" alt="" />
+        <img src="/image/ultimate.svg" alt="" />
       </div>
     ),
   },
@@ -45,10 +45,10 @@ const awards: Award[] = [
 
 const AwardsSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#FAFAFA] py-[120px]">
+    <section className="w-full bg-[#FAFAFA] py-16 md:py-[120px]">
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px]">
         {/* Section Header */}
-        <div className="mb-[80px]">
+        <div className="mb-12 md:mb-[80px]">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-[10px] h-[10px] bg-[#FF8A3D]" />
             <span className="text-[16px] font-bold font-heading tracking-widest text-black">
@@ -57,7 +57,7 @@ const AwardsSection: React.FC = () => {
             <span className="w-[10px] h-[10px] bg-[#FF8A3D]" />
           </div>
 
-          <h2 className="text-[70px] leading-[1.05] font-extrabold uppercase text-black max-w-[700px]">
+          <h2 className="text-4xl md:text-[70px] leading-[1.05] font-extrabold uppercase text-black max-w-[700px]">
             Proof we’re
             <br />
             kinda awesome
@@ -69,10 +69,10 @@ const AwardsSection: React.FC = () => {
           {awards.map((award, index) => (
             <div
               key={index}
-              className="bg-[#F3F3F3] p-[48px] min-h-[360px] flex flex-col justify-between"
+              className="bg-[#F3F3F3] p-8 md:p-[48px] min-h-auto md:min-h-[360px] flex flex-col justify-between"
             >
               {/* Icon */}
-              <div className="mb-[40px]">{award.icon}</div>
+              <div className="mb-6 md:mb-[40px]">{award.icon}</div>
 
               {/* Content */}
               <div>
@@ -80,7 +80,7 @@ const AwardsSection: React.FC = () => {
                   {award.year}
                 </span>
 
-                <h3 className="text-[28px] leading-[1.2] font-extrabold uppercase text-black whitespace-pre-line mb-[16px]">
+                <h3 className="text-2xl md:text-[28px] leading-[1.2] font-extrabold uppercase text-black whitespace-pre-line mb-[16px]">
                   {award.title}
                 </h3>
 

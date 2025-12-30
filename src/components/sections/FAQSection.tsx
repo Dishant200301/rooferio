@@ -51,9 +51,9 @@ export function FAQSection() {
     <section className="bg-light-alt py-16 md:py-24">
       <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px]">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <div className="section-label mb-4">FAQs</div>
-          <h2 className="section-heading">
+          <h2 className="section-heading text-3xl md:text-6xl lg:text-7xl">
             Let's Climb Through Your<br />
             Questions, One By One.
           </h2>
@@ -69,32 +69,32 @@ export function FAQSection() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between gap-6 pl-6 text-left"
+                className="w-full flex items-center justify-between gap-4 md:gap-6 pl-4 md:pl-6 text-left"
               >
                 <h3
-                  className="font-heading text-lg md:text-xl font-bold uppercase pr-4"
+                  className="font-heading text-lg md:text-xl font-bold uppercase pr-2 md:pr-4"
                   style={{ letterSpacing: "-0.1px", lineHeight: "29px" }}
                 >
                   {faq.question}
                 </h3>
                 <div
-                  className={`w-16 h-16 flex items-center justify-center shrink-0 transition-colors ${openIndex === index
+                  className={`w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0 transition-colors ${openIndex === index
                     ? "bg-orange-500 text-black"
                     : "bg-black text-white"
                     }`}
                 >
                   <ChevronDown
-                    className={`w-6 h-6 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""
+                    className={`w-5 h-5 md:w-6 md:h-6 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""
                       }`}
                   />
                 </div>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-48 bg-[#f5f5f5] text-black" : "max-h-0"
+                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96 md:max-h-48 bg-[#f5f5f5] text-black" : "max-h-0"
                   }`}
               >
                 <p
-                  className="px-6 pb-5 mt-4 font-inter text-[16px] font-inter font-semibold opacity-80"
+                  className="px-4 md:px-6 pb-4 md:pb-5 mt-2 md:mt-4 font-inter text-[16px] font-inter font-semibold opacity-80"
                   style={{ lineHeight: "24px" }}
                 >
                   {faq.answer}

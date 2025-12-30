@@ -120,13 +120,13 @@ export function StatsSection() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px] relative z-10 h-full flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 md:gap-y-32 w-full max-w-[1200px] mx-auto">
+      <div className="container mx-auto px-5 md:px-12 lg:px-6 xl:px-12 max-w-[1590px] relative z-10 h-full flex items-center py-12 md:py-0">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-x-4 md:gap-x-12 gap-y-12 md:gap-y-32 w-full max-w-[1200px] mx-auto">
           {statsData.map((stat, index) => (
             <div key={stat.title} className="text-white text-center flex flex-col items-center">
               {/* Value & Suffix */}
-              <div className="flex items-start justify-center leading-none mb-4">
-                <span className="font-heading text-[50px] md:text-[80px] lg:text-[100px] font-semibold tracking-tighter text-white">
+              <div className="flex items-start justify-center leading-none mb-2 md:mb-4">
+                <span className="font-heading text-[40px] md:text-[80px] lg:text-[100px] font-semibold tracking-tighter text-white">
                   {stat.decimals > 0
                     ? counts[index].toFixed(stat.decimals)
                     : Math.floor(counts[index]).toLocaleString()}
@@ -137,13 +137,13 @@ export function StatsSection() {
               </div>
 
               {/* Title */}
-              <h3 className="font-heading text-2xl md:text-[28px] font-extrabold uppercase mb-4 tracking-wide">
+              <h3 className="font-heading text-xl md:text-[28px] font-extrabold uppercase mb-2 md:mb-4 tracking-wide">
                 {stat.title}
               </h3>
 
               {/* Description */}
               <p
-                className="font-body text-lg md:text-base opacity-90 max-w-[280px] leading-relaxed"
+                className="font-body text-xs md:text-base opacity-90 max-w-[280px] leading-relaxed"
               >
                 {stat.description}
               </p>
@@ -161,7 +161,7 @@ export function StatsSection() {
         ref={videoRef}
         className="absolute inset-0 z-0 flex items-center justify-center w-full h-full"
       >
-        <div className="w-full h-full">
+        <div className="w-full h-[100px] lg:h-full">
           <VideoSection />
         </div>
       </div>
