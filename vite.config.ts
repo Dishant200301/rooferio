@@ -4,7 +4,6 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import Sitemap from "vite-plugin-sitemap";
-import vitePrerender from "vite-plugin-prerender";
 
 // Helper to extract slugs using regex to avoid import issues with TS/Assets
 const extractSlugs = (filePath: string, pattern: RegExp) => {
@@ -59,14 +58,6 @@ export default defineConfig(({ mode }) => ({
       hostname: "https://roofaria.com",
       dynamicRoutes: routes,
       generateRobotsTxt: false,
-    }),
-    vitePrerender({
-      staticDir: path.resolve(__dirname, "dist"),
-      routes: routes,
-      renderer: new vitePrerender.PuppeteerRenderer({
-        maxConcurrentRoutes: 1,
-        renderAfterTime: 500,
-      }),
     }),
   ].filter(Boolean),
   resolve: {
