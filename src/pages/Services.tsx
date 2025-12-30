@@ -1,14 +1,16 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Link } from "react-router-dom";
 import { services } from "../data/services";
 
 import { Helmet } from "react-helmet-async";
+import { PageTransition } from "@/components/PageTransition";
 
 const Services = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition>
+      <div className="min-h-screen">
       <Helmet>
         <title>Rooferio - Roofer and Roofing Service Framer Template</title>
       </Helmet>
@@ -90,8 +92,8 @@ const Services = () => {
         {/* Contact CTA Section */}
         <ContactSection />
       </main>
-      <Footer />
-    </div>
+      <Footer />    </div>
+    </PageTransition>
   );
 };
 

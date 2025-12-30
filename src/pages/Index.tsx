@@ -12,32 +12,35 @@ import { RoofingTypesSection } from "@/components/sections/RoofingTypesSection";
 import { BlogsSection } from "@/components/sections/BlogsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { PageTransition } from "@/components/PageTransition";
 
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Helmet>
-        <title>Rooferio - Roofer and Roofing Service Framer Template</title>
-      </Helmet>
-      <Navbar />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <WhyChooseUsSection />
-        <StatsSection />
-        <AboutSection />
-        <HowWeWorkSection />
-        <TestimonialsSection />
-        <RoofingTypesSection />
-        <BlogsSection />
-        <FAQSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <PageTransition>
+      <div className="min-h-screen">
+        <Helmet>
+          <title>Rooferio - Roofer and Roofing Service Framer Template</title>
+        </Helmet>
+        <Navbar />
+        <main>
+          <HeroSection />
+          <ServicesSection />
+          <PortfolioSection />
+          <WhyChooseUsSection />
+          <StatsSection />
+          <AboutSection />
+          <HowWeWorkSection />
+          <TestimonialsSection />
+          <RoofingTypesSection />
+          <BlogsSection />
+          <FAQSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 

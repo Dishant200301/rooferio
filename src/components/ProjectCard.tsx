@@ -1,7 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProjectDetail } from "@/data/projectDetails";
-import { ArrowRight } from "lucide-react";
 
 interface ProjectCardProps {
     project: ProjectDetail;
@@ -9,8 +8,10 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     const cardRef = useRef<HTMLAnchorElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [sliderPosition, setSliderPosition] = useState(100);
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if (cardRef.current) {
@@ -20,6 +21,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 y: e.clientY - rect.top,
             });
         }
+
+        // Update slider position based on mouse position over image
+        if (imageRef.current) {
+            const imageRect = imageRef.current.getBoundingClientRect();
+            const x = e.clientX - imageRect.left;
+            const percentage = (x / imageRect.width) * 100;
+            const clampedPercentage = Math.min(Math.max(percentage, 0), 100);
+            setSliderPosition(clampedPercentage);
+        }
     };
 
     return (
@@ -28,24 +38,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ref={cardRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-            className="relative block bg-[#f5f5f5] h-[300px] group cursor-none overflow-hidden"
+            onMouseLeave={() => {
+                setIsHovering(false);
+                setSliderPosition(100); // Reset to center when mouse leaves
+            }}
+            className="relative block bg-[#f5f5f5] h-[300px] group  overflow-hidden"
         >
             {/* Custom Cursor */}
-             {/* Hover Button (Cursor Follower) */}
-        <div
-          className="absolute z-50 pointer-events-none transition-opacity duration-150 ease-out"
-          style={{
-            left: 0,
-            top: 0,
-            transform: `translate(${cursorPos.x}px, ${cursorPos.y}px) translate(-50%, -50%)`,
-            opacity: isHovering ? 1 : 0,
-          }}
-        >
-          <span className="bg-black text-white text-[16px] font-heading font-bold py-2 px-2 uppercase tracking-widest flex items-center gap-2 shadow-2xl whitespace-nowrap">
-            View <span className="text-white animate-arrow">{'>>>'}</span>
-          </span>
-        </div>
+            {/* <div
+                className="absolute z-50 pointer-events-none transition-opacity duration-150 ease-out"
+                style={{
+                    left: 0,
+                    top: 0,
+                    transform: `translate(${cursorPos.x}px, ${cursorPos.y}px) translate(-50%, -50%)`,
+                    opacity: isHovering ? 1 : 0,
+                }}
+            >
+                <span className="bg-black text-white text-[16px] font-heading font-bold py-2 px-2 uppercase tracking-widest flex items-center gap-2 shadow-2xl whitespace-nowrap">
+                    View <span className="text-white animate-arrow">{'>>>'}</span>
+                </span>
+            </div> */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
                 {/* Content */}
@@ -66,23 +78,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     </div>
                 </div>
 
-                {/* Image Container */}
-                <div className="relative h-64 lg:h-full overflow-hidden order-1 lg:order-2">
-                    {/* Before Image (Default) */}
+                {/* Image Container with Hover-Based Before/After Comparison */}
+                <div
+                    ref={imageRef}
+                    className="relative h-64 lg:h-full overflow-hidden order-1 lg:order-2"
+                >
+                    {/* After Image (Background) */}
                     <img
-                        src={project.beforeAfter.before}
-                        alt={`${project.title} Before`}
-                        className="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500"
+                        src={project.beforeAfter.after}
+                        alt={`${project.title} After`}
+                        className="absolute inset-0 w-full h-full object-cover z-10"
                     />
 
-                    {/* After Image (Slides in on Hover) */}
-                    <div className="absolute inset-0 z-20 w-full h-full translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
+                    {/* Before Image (Clipped based on mouse position) */}
+                    <div
+                        className="absolute inset-0 z-20 overflow-hidden transition-all duration-200 ease-out"
+                        style={{
+                            clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
+                        }}
+                    >
                         <img
-                            src={project.beforeAfter.after}
-                            alt={`${project.title} After`}
+                            src={project.beforeAfter.before}
+                            alt={`${project.title} Before`}
                             className="w-full h-full object-cover"
                         />
                     </div>
+
+                   
+
+                   
                 </div>
             </div>
         </Link>

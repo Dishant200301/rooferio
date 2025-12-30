@@ -145,7 +145,7 @@ export function Footer() {
         {/* --- BIG LOGO SECTION --- */}
         <div className="relative px-4 pt-10 pb-10 overflow-hidden">
           <div className="flex flex-col lg:flex-row justify-between items-start">
-            <h2 className="font-heading text-[20vw] lg:text-[211px] font-[400] uppercase leading-[211px] tracking-tighter text-white -ml-2">
+            <h2 className="font-heading text-[20vw] lg:text-[311px] font-[400] uppercase leading-[211px] tracking-tighter text-white -ml-2">
               Rooferio
             </h2>
             <div className="text-[16px] text-gray-300 text-left max-w-[280px] mt-4 lg:mt-12 lg:mr-4 font-medium">

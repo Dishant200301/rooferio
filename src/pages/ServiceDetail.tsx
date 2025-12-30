@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 // import { RooferSilhouette } from "@/components/RooferSilhouette";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -8,6 +8,7 @@ import { services } from "../data/services";
 import { useState } from "react";
 import { ArrowRight, ChevronDown, ChevronUp, Phone, Calendar, MessageSquare, Award, ShieldCheck, Trophy, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { PageTransition } from "@/components/PageTransition";
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -21,7 +22,8 @@ const ServiceDetail = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <PageTransition>
+      <div className="min-h-screen">
       <Helmet>
         <title>{service.title}</title>
       </Helmet>
@@ -469,8 +471,8 @@ const ServiceDetail = () => {
         {/* Silhouette */}
         {/* <RooferSilhouette /> */}
       </main>
-      <Footer />
-    </div>
+      <Footer />    </div>
+    </PageTransition>
   );
 };
 

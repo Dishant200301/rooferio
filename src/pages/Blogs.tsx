@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { useState, cloneElement, isValidElement } from "react";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { blogs } from "@/data/blogs";
 import { Star } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { PageTransition } from "@/components/PageTransition";
 const categories = [
   { id: "all", label: "All", iconSrc: "/image/filter-all.svg" },
   { id: "featured", label: "Featured", iconSrc: <Star /> },
@@ -26,7 +27,8 @@ const Blogs = () => {
 
 
   return (
-    <div className="min-h-screen bg-background">
+    <PageTransition>
+      <div className="min-h-screen bg-background">
       <Helmet>
         <title>Rooferio - Roofer and Roofing Service Framer Template</title>
       </Helmet>
@@ -122,8 +124,8 @@ const Blogs = () => {
         {/* Contact Section */}
         <ContactSection />
       </main>
-      <Footer />
-    </div>
+      <Footer />    </div>
+    </PageTransition>
   );
 };
 

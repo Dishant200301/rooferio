@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 // import { RooferSilhouette } from "@/components/RooferSilhouette";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -8,10 +8,12 @@ import { projectDetails } from "@/data/projectDetails";
 import { ProjectCard } from "@/components/ProjectCard";
 
 import { Helmet } from "react-helmet-async";
+import { PageTransition } from "@/components/PageTransition";
 
 const Projects = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition>
+      <div className="min-h-screen">
       <Helmet>
         <title>Rooferio - Roofer and Roofing Service Framer Template</title>
       </Helmet>
@@ -45,8 +47,8 @@ const Projects = () => {
         {/* Silhouette */}
         {/* <RooferSilhouette /> */}
       </main>
-      <Footer />
-    </div>
+      <Footer />    </div>
+    </PageTransition>
   );
 };
 

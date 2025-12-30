@@ -42,32 +42,52 @@ export function Navbar() {
                 onMouseLeave={link.hasDropdown ? () => setIsServicesOpen(false) : undefined}
               >
                 {link.hasDropdown ? (
-                  <button
+                  <Link
+                    to={link.href}
                     className="relative flex items-center gap-1 px-4 py-2 font-heading text-base font-bold uppercase overflow-hidden group"
                   >
                     <span
-                      className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-300 ease-in-out -z-10 ${location.pathname.startsWith("/services") ? "h-full" : "h-0 group-hover:h-full"
+                      className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-400 ease-out -z-10 ${location.pathname.startsWith("/services") ? "h-full" : "h-0 group-hover:h-full"
                         }`}
                     />
-                    <span className="relative z-10 inline-flex flex-col whitespace-nowrap">
-                      <span className={`flex items-center gap-1 transition-colors duration-300 ease-in-out ${location.pathname.startsWith("/services") ? "text-white" : "group-hover:text-white"}`}>
-                        {link.name}
-                        <ChevronDown className="w-4 h-4" />
+                    <span className="relative z-10 inline-flex flex-col whitespace-nowrap overflow-hidden">
+                      {/* Default text - slides up and fades out */}
+                      <span className={`flex items-center gap-1 transition-all duration-400 ease-out ${location.pathname.startsWith("/services") ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100 group-hover:translate-y-[-100%] group-hover:opacity-0"}`}>
+                        <span className="text-black">{link.name}</span>
+                        <img
+                          src="/image/arrow-right.svg"
+                          alt=""
+                          className="w-4 h-4 transition-all duration-400 ease-out rotate-90 group-hover:brightness-0 group-hover:invert"
+                        />
+                      </span>
+                      {/* Hover text - slides up from bottom */}
+                      <span className={`flex items-center gap-1 absolute top-0 transition-all duration-400 ease-out ${location.pathname.startsWith("/services") ? "translate-y-0 opacity-100" : "translate-y-[100%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100"}`}>
+                        <span className="text-white">{link.name}</span>
+                        <img
+                          src="/image/arrow-right.svg"
+                          alt=""
+                          className="w-4 h-4 transition-transform duration-400 ease-out rotate-90 brightness-0 invert"
+                        />
                       </span>
                     </span>
-                  </button>
+                  </Link>
                 ) : (
                   <Link
                     to={link.href}
-                    className="relative px-4 py-2 font-heading text-base font-bold uppercase overflow-hidden group"
+                    className="relative px-4 py-2  font-heading text-base font-bold uppercase overflow-hidden group"
                   >
                     <span
-                      className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-300 ease-in-out -z-10 ${location.pathname === link.href ? "h-full" : "h-0 group-hover:h-full"
+                      className={`absolute bottom-0 left-0 w-full bg-black transition-all duration-400 ease-out -z-10 ${location.pathname === link.href ? "h-full" : "h-0 group-hover:h-full"
                         }`}
                     />
-                    <span className="relative z-10 inline-flex flex-col whitespace-nowrap">
-                      <span className={`block transition-colors duration-300 ease-in-out ${location.pathname === link.href ? "text-white" : "group-hover:text-white"}`}>
-                        {link.name}
+                    <span className="relative z-10 inline-flex flex-col whitespace-nowrap overflow-hidden">
+                      {/* Default text - slides up and fades out */}
+                      <span className={`block transition-all duration-400 ease-out ${location.pathname === link.href ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100 group-hover:translate-y-[-100%] group-hover:opacity-0"}`}>
+                        <span className="text-black">{link.name}</span>
+                      </span>
+                      {/* Hover text - slides up from bottom */}
+                      <span className={`block absolute top-0 transition-all duration-400 ease-out ${location.pathname === link.href ? "translate-y-0 opacity-100" : "translate-y-[100%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100"}`}>
+                        <span className="text-white">{link.name}</span>
                       </span>
                     </span>
                   </Link>
@@ -86,7 +106,7 @@ export function Navbar() {
                           <Link
                             key={service.name}
                             to={service.href}
-                            className="relative z-10 flex items-center justify-between px-4 py-3 font-heading text-sm font-bold uppercase overflow-hidden group bg-white hover:bg-white transition-colors"
+                            className="relative z-10 flex hover:bg-[#f5f5f5] items-center justify-between px-4 py-3 font-heading text-sm font-bold uppercase overflow-hidden group bg-white transition-colors"
                           >
                             <span className="relative z-10 inline-flex items-center gap-3">
                               <Icon className="w-5 h-5 text-black" />
@@ -97,8 +117,9 @@ export function Navbar() {
                             <img
                               src="/image/arrow-right.svg"
                               alt=""
-                              className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                              className="w-4 h-4 hidden opacity-0 translate-x-[-6px] group-hover:block group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
                             />
+
                           </Link>
                         );
                       })}

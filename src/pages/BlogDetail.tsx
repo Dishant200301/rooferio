@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -7,6 +7,7 @@ import { getBlogDetailBySlug, blogDetails } from "@/data/blogDetails";
 import { blogs } from "@/data/blogs";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Helmet } from "react-helmet-async";
+import { PageTransition } from "@/components/PageTransition";
 
 const BlogDetail = () => {
     const { blogId } = useParams();
@@ -39,7 +40,8 @@ const BlogDetail = () => {
 
 
     return (
-        <div className="min-h-screen bg-white">
+        <PageTransition>
+      <div className="min-h-screen bg-white">
             <Helmet>
                 <title>{blog.title}</title>
             </Helmet>
@@ -247,8 +249,8 @@ const BlogDetail = () => {
                 <ContactSection />
             </main>
 
-            <Footer />
-        </div>
+            <Footer />    </div>
+    </PageTransition>
     );
 };
 
